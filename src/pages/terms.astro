@@ -1,0 +1,67 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout title="Terms of Service" description="Terms of Service for Go Travel Helpers.">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Terms of Service</h1>
+      <p>Last updated: June 1, 2026</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose legal">
+      <p>
+        These Terms of Service ("Terms") govern your use of the {site.name} website and services. By using our website or engaging our services, you agree to these Terms.
+      </p>
+
+      <h2>Services</h2>
+      <p>
+        {site.name} provides travel companion and related travel support services. Specific services, scope, and pricing are defined in individual service agreements or quotes provided to clients.
+      </p>
+
+      <h2>No medical guarantee</h2>
+      <p>
+        While our team includes registered nursing credentials, our travel companion services are not a substitute for emergency medical care, physician oversight, or hospital services. Travelers with medical conditions should consult their healthcare providers before travel.
+      </p>
+
+      <h2>Bookings and payment</h2>
+      <p>
+        Service terms, including fees, cancellation policies, and payment schedules, will be provided in writing before services are confirmed. Quotes are non-binding until a formal agreement is reached.
+      </p>
+
+      <h2>Client responsibilities</h2>
+      <p>
+        Clients agree to provide accurate information about the traveler's health, mobility, and needs so that we can plan appropriate support. Clients are responsible for valid travel documents, tickets, and insurance as applicable.
+      </p>
+
+      <h2>Limitation of liability</h2>
+      <p>
+        To the fullest extent permitted by law, {site.name} shall not be liable for delays, cancellations, or events caused by airlines, weather, government actions, or other circumstances beyond our reasonable control.
+      </p>
+
+      <h2>Website use</h2>
+      <p>
+        You may not use this website for unlawful purposes or attempt to interfere with its operation. Content on this site is for general information and may be updated without notice.
+      </p>
+
+      <h2>Changes</h2>
+      <p>
+        We may update these Terms from time to time. Continued use of our website or services after changes constitutes acceptance of the updated Terms.
+      </p>
+
+      <h2>Contact</h2>
+      <p>
+        Questions about these Terms? Contact us at <a href={`mailto:${site.email}`}>{site.email}</a> or <a href={site.phoneHref}>{site.phone}</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal a {
+    color: var(--color-accent);
+  }
+</style>

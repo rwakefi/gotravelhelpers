@@ -1,0 +1,63 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout title="Privacy Policy" description="Privacy Policy for Go Travel Helpers.">
+  <section class="page-hero">
+    <div class="container">
+      <h1>Privacy Policy</h1>
+      <p>Last updated: June 1, 2026</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container prose legal">
+      <p>
+        This Privacy Policy describes how {site.name} ("we," "us," or "our") collects, uses, and shares information when you visit gotravelhelpers.com or contact us for services.
+      </p>
+
+      <h2>Information we collect</h2>
+      <p>
+        We may collect information you provide directly, including your name, email address, phone number, travel details, and any special needs you share through our contact form, email, or phone conversations.
+      </p>
+      <p>
+        We may also collect standard technical information when you visit our website, such as browser type, device information, and pages viewed.
+      </p>
+
+      <h2>How we use your information</h2>
+      <ul>
+        <li>To respond to inquiries and provide travel companion services</li>
+        <li>To communicate with you about your trip planning</li>
+        <li>To improve our website and services</li>
+        <li>To comply with legal obligations</li>
+      </ul>
+
+      <h2>Information sharing</h2>
+      <p>
+        We do not sell your personal information. We may share information with service providers who assist us in operating our business (such as email or form delivery services), or when required by law.
+      </p>
+
+      <h2>Data security</h2>
+      <p>
+        We take reasonable measures to protect your information. However, no method of transmission over the internet is completely secure.
+      </p>
+
+      <h2>Your choices</h2>
+      <p>
+        You may contact us at <a href={`mailto:${site.email}`}>{site.email}</a> to request access to, correction of, or deletion of your personal information, subject to applicable law.
+      </p>
+
+      <h2>Contact us</h2>
+      <p>
+        If you have questions about this Privacy Policy, contact us at <a href={`mailto:${site.email}`}>{site.email}</a> or <a href={site.phoneHref}>{site.phone}</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal a {
+    color: var(--color-accent);
+  }
+</style>

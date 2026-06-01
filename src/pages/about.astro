@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site, images } from '../data/site';
+---
+
+<BaseLayout title="About" description="Meet Cyndi Glidewell, RN, MBA — founder of Go Travel Helpers, providing compassionate travel companion services worldwide.">
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">About us</p>
+      <h1>Compassionate care meets world-class travel support</h1>
+      <p>
+        Go Travel Helpers was founded on a simple belief: everyone should be able to travel — for medical care, family, or the trip of a lifetime.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-grid">
+      <div class="about-grid__image">
+        <img
+          src={images.about.src}
+          alt={images.about.alt}
+          width={images.about.width}
+          height={images.about.height}
+          loading="lazy"
+        />
+      </div>
+      <div class="about-grid__content prose">
+        <h2>{site.founder.name}, {site.founder.credentials}</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <p>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+        <p>
+          Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <p class="section-label">Our approach</p>
+      <h2 class="section-title">Personal, professional, and present</h2>
+      <div class="grid-3 approach-grid">
+        <article class="card">
+          <h3>Led by a registered nurse</h3>
+          <p>Medical expertise informs every companion plan, ensuring travelers with health needs receive informed, attentive support.</p>
+        </article>
+        <article class="card">
+          <h3>Tailored to you</h3>
+          <p>No two travelers are alike. We customize every detail — from airport assistance to multi-day trip companionship.</p>
+        </article>
+        <article class="card">
+          <h3>Worldwide reach</h3>
+          <p>Our companions travel wherever you need to go, providing consistent support across domestic and international journeys.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container quote-block">
+      <blockquote>
+        <p>&ldquo;{site.motto}&rdquo;</p>
+        <footer>— {site.founder.name}, {site.founder.credentials}</footer>
+      </blockquote>
+      <a href="/contact" class="btn btn--primary">Start a Conversation</a>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .about-grid {
+    display: grid;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  @media (min-width: 768px) {
+    .about-grid {
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+  }
+
+  .about-grid__image img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--radius);
+  }
+
+  .about-grid__content h2 {
+    font-size: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .approach-grid {
+    margin-top: 2.5rem;
+  }
+
+  .quote-block {
+    text-align: center;
+    max-width: 40rem;
+    margin-inline: auto;
+  }
+
+  .quote-block blockquote p {
+    font-family: var(--font-serif);
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+
+  .quote-block footer {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+    display: block;
+  }
+</style>

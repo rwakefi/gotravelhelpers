@@ -1,0 +1,107 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { faqs, site } from '../data/site';
+---
+
+<BaseLayout title="FAQ" description="Frequently asked questions about Go Travel Helpers travel companion services, pricing, coverage, and medical support.">
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-label">FAQ</p>
+      <h1>Common questions</h1>
+      <p>
+        Find answers to the questions we hear most often. Don't see yours? We're happy to help — just reach out.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container faq-list">
+      {
+        faqs.map((item) => (
+          <details class="faq-item">
+            <summary>{item.question}</summary>
+            <p>{item.answer}</p>
+          </details>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container faq-cta">
+      <h2>Still have questions?</h2>
+      <p>We're here to help. Call, email, or send us a message.</p>
+      <div class="cta-actions">
+        <a href="/contact" class="btn btn--primary">Contact Us</a>
+        <a href={site.phoneHref} class="btn btn--secondary">{site.phone}</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .faq-list {
+    max-width: 44rem;
+    margin-inline: auto;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid var(--color-border);
+    padding: 1.25rem 0;
+  }
+
+  .faq-item summary {
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 500;
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: '+';
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    color: var(--color-accent);
+    flex-shrink: 0;
+  }
+
+  .faq-item[open] summary::after {
+    content: '−';
+  }
+
+  .faq-item p {
+    color: var(--color-text-muted);
+    margin-top: 1rem;
+    padding-right: 2rem;
+  }
+
+  .faq-cta {
+    text-align: center;
+  }
+
+  .faq-cta h2 {
+    font-size: clamp(2rem, 3vw, 2.75rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .faq-cta p {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+
+  .cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+</style>

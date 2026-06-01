@@ -1,0 +1,153 @@
+---
+import { site, nav } from '../data/site';
+
+const fullAddress = `${site.address.line1}, ${site.address.line2}, ${site.address.city}, ${site.address.state} ${site.address.zip}`;
+---
+
+<footer class="footer">
+  <div class="container footer__grid">
+    <div class="footer__brand">
+      <a href="/" class="footer__logo">{site.name}</a>
+      <p class="footer__tagline">{site.tagline}</p>
+      <div class="footer__social">
+        <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+          Facebook
+        </a>
+        <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          Instagram
+        </a>
+        <a href={site.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          LinkedIn
+        </a>
+      </div>
+    </div>
+
+    <div>
+      <h3 class="footer__heading">Explore</h3>
+      <ul class="footer__links">
+        {nav.map((item) => (
+          <li><a href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="footer__heading">Contact</h3>
+      <ul class="footer__links footer__contact">
+        <li><a href={site.phoneHref}>{site.phone}</a></li>
+        <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
+        <li>{fullAddress}</li>
+      </ul>
+    </div>
+
+    <div>
+      <h3 class="footer__heading">Legal</h3>
+      <ul class="footer__links">
+        <li><a href="/privacy">Privacy Policy</a></li>
+        <li><a href="/terms">Terms of Service</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="container footer__bottom">
+    <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: var(--color-text);
+    color: rgba(247, 245, 242, 0.85);
+    padding: 4rem 0 2rem;
+  }
+
+  .footer__grid {
+    display: grid;
+    gap: 2.5rem;
+    margin-bottom: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .footer__grid {
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    }
+  }
+
+  .footer__logo {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+    display: inline-block;
+    margin-bottom: 0.75rem;
+  }
+
+  .footer__tagline {
+    font-size: 0.9375rem;
+    color: rgba(247, 245, 242, 0.65);
+    margin-bottom: 1.25rem;
+  }
+
+  .footer__social {
+    display: flex;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+  }
+
+  .footer__social a {
+    font-size: 0.875rem;
+    color: rgba(247, 245, 242, 0.75);
+    transition: color 0.2s;
+  }
+
+  .footer__social a:hover {
+    color: #fff;
+  }
+
+  .footer__heading {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 1rem;
+  }
+
+  .footer__links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .footer__links li {
+    margin-bottom: 0.5rem;
+  }
+
+  .footer__links a {
+    font-size: 0.9375rem;
+    color: rgba(247, 245, 242, 0.75);
+    transition: color 0.2s;
+  }
+
+  .footer__links a:hover {
+    color: #fff;
+  }
+
+  .footer__contact li {
+    font-size: 0.9375rem;
+    color: rgba(247, 245, 242, 0.75);
+    line-height: 1.5;
+  }
+
+  .footer__bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  .footer__bottom p {
+    font-size: 0.8125rem;
+    color: rgba(247, 245, 242, 0.5);
+    margin: 0;
+  }
+</style>
