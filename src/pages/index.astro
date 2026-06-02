@@ -15,7 +15,16 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
     </div>
     <div class="container hero__grid">
       <div class="hero__content">
-        <p class="section-label hero__label">Worldwide travel companions</p>
+        <a href="/" class="hero__logo-mark">
+          <img
+            src={site.logo.src}
+            alt={site.logo.alt}
+            width={site.logo.width}
+            height={site.logo.height}
+            loading="eager"
+            decoding="async"
+          />
+        </a>
         <h1>{site.motto}</h1>
         <p class="hero__lead">
           {site.description}
@@ -337,10 +346,17 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
     }
   }
 
-  .hero__label {
-    font-size: clamp(1rem, 1.75vw, 1.25rem);
-    letter-spacing: 0.12em;
-    margin-bottom: 1.25rem;
+  .hero__logo-mark {
+    display: inline-block;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero__logo-mark img {
+    display: block;
+    width: clamp(11rem, 22vw, 16rem);
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
   }
 
   .hero__content h1 {
