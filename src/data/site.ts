@@ -1,10 +1,10 @@
 export const site = {
-  name: 'Go Travel Helpers',
+  name: 'Travel Helpers',
   domain: 'gotravelhelpers.com',
   motto: "Don't let getting there keep you from going.",
   tagline: "Don't let getting there keep you from going.",
   description:
-    'Go Travel Helpers provides travel companions for seniors and people who need extra support when flying or lodging along the way — everything needed to get from point A to point B, for medical needs or that bucket-list trip.',
+    'Travel Helpers provides travel companions for seniors and people who need extra support when flying or lodging along the way — everything needed to get from point A to point B, for medical needs or that bucket-list trip.',
   phone: '479.420.5184',
   phoneHref: 'tel:+14794205184',
   email: 'info@gotravelhelpers.com',

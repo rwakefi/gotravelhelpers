@@ -1,4 +1,4 @@
-# Go Travel Helpers
+# Travel Helpers
 
 Website for [gotravelhelpers.com](https://gotravelhelpers.com) — built with [Astro](https://astro.build) as a static site you can edit in Cursor and deploy to IONOS.
 
