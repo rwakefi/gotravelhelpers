@@ -46,8 +46,15 @@ img {
 }
 
 .header__logo img,
-.footer__logo img {
+.footer__logo img,
+.hero__clouds,
+.hero__cloud {
   border: none;
+}
+
+.page-home main > .hero--sky {
+  margin-top: calc(-1 * var(--header-height));
+  padding-top: calc(var(--header-height) + 2rem);
 }
 
 a {

@@ -153,7 +153,7 @@ export const audiences = [
     title: 'Seniors traveling independently',
     description: 'Regain confidence to visit family, attend events, or explore the world on your own terms.',
     image: '/images/audience-seniors.jpg',
-    imageAlt: 'Senior couple with luggage preparing to travel',
+    imageAlt: 'Commercial airplane flying through the clouds',
   },
   {
     title: 'Adult children arranging care',

@@ -32,7 +32,7 @@ Theme: senior-aged adults traveling.
 | medical.jpg | 5790837 | Elderly couple sharing supportive moment |
 | group-travel.jpg | 8473852 | Senior friends traveling together |
 | contact.jpg | 8473848 | Elderly travelers at the airport |
-| audience-seniors.jpg | 8473849 | Senior couple with luggage |
+| audience-seniors.jpg | 1430672 | Airplane flying through the clouds |
 | audience-family.jpg | 7224924 | Elderly couple traveling together |
 | audience-medical.jpg | 16364306 | Senior in wheelchair with caregiver |
 | audience-adventure.jpg | 8170284 | Elderly couple enjoying bucket-list trip |

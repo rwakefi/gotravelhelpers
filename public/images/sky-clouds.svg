@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#b8d4e8"/>
+      <stop offset="45%" stop-color="#d4e8f4"/>
+      <stop offset="100%" stop-color="#f7f5f2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1440" height="320" fill="url(#sky)"/>
+  <ellipse cx="200" cy="180" rx="140" ry="55" fill="#fff" opacity="0.85"/>
+  <ellipse cx="280" cy="195" rx="100" ry="40" fill="#fff" opacity="0.75"/>
+  <ellipse cx="120" cy="200" rx="80" ry="35" fill="#fff" opacity="0.7"/>
+  <ellipse cx="620" cy="140" rx="160" ry="60" fill="#fff" opacity="0.9"/>
+  <ellipse cx="750" cy="155" rx="120" ry="45" fill="#fff" opacity="0.8"/>
+  <ellipse cx="540" cy="165" rx="90" ry="38" fill="#fff" opacity="0.65"/>
+  <ellipse cx="1050" cy="120" rx="150" ry="58" fill="#fff" opacity="0.88"/>
+  <ellipse cx="1180" cy="135" rx="110" ry="42" fill="#fff" opacity="0.78"/>
+  <ellipse cx="1320" cy="150" rx="95" ry="36" fill="#fff" opacity="0.7"/>
+  <ellipse cx="900" cy="200" rx="130" ry="48" fill="#fff" opacity="0.55"/>
+  <ellipse cx="400" cy="90" rx="70" ry="28" fill="#fff" opacity="0.5"/>
+</svg>
