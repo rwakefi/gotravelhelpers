@@ -2,9 +2,32 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import { site, services, images } from '../data/site';
+
+const servicesSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'OfferCatalog',
+  name: 'Travel companion services',
+  provider: {
+    '@type': 'TravelAgency',
+    name: site.name,
+    url: 'https://gotravelhelpers.com',
+  },
+  itemListElement: services.map((service) => ({
+    '@type': 'Service',
+    name: service.title,
+    description: service.description,
+    serviceType: service.title,
+    provider: { '@type': 'TravelAgency', name: site.name },
+    areaServed: 'Worldwide',
+  })),
+};
 ---
 
-<BaseLayout title="Services" description="Full-service travel companion support — airport, in-flight, door-to-door, lodging, planning, and medical travel assistance worldwide.">
+<BaseLayout
+  title="Services"
+  description="Full-service travel companion support — airport, in-flight, door-to-door, lodging, planning, and medical travel assistance worldwide."
+  schema={servicesSchema}
+>
   <PageHero
     label="What we offer"
     title="Companion services for every leg of the journey"

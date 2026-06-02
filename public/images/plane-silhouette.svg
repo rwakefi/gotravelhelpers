@@ -1,33 +1,28 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 32" aria-hidden="true">
+  <!-- Side-profile airliner, nose pointing left (direction of travel) -->
   <g fill="#4a6a82">
-    <!-- Fuselage -->
-    <path
-      d="M9 15.2c0-2.1 1.6-3.2 3.4-3.2h33.8c5.2 0 7.4 1.5 7.8 3.1.3 1.2.3 2.4 0 3.6-.4 1.6-2.6 3.1-7.8 3.1H12.4c-1.8 0-3.4-1.1-3.4-3.2v-.4z"
-    />
-    <!-- Nose cone -->
-    <path
-      d="M9 16.2 4.2 16.1c-1.4 0-1.2-1.5 1.2-2.4L9 14.8v1.4z"
-      fill="#3d5a72"
-    />
-    <!-- Main wing -->
-    <path d="M24.5 16 33 8.8 37.2 16 33 23.2z" />
-    <!-- Wing fairing / engine -->
-    <ellipse cx="31" cy="20.8" rx="2.6" ry="1.7" fill="#3d5a72" />
-    <!-- Vertical tail -->
-    <path d="M50.5 13.8 54.8 8.5 57.2 14.2 53.8 16.2z" />
+    <!-- Far wing (behind fuselage, slightly darker) -->
+    <path d="M30 15.5 41 9.5 44 10 35 16z" fill="#3d5a72" opacity="0.85" />
+    <!-- Vertical tail fin, swept back -->
+    <path d="M47 14.2 57.5 7.8 58.4 9.4 51.5 15z" fill="#3d5a72" />
     <!-- Horizontal stabilizer -->
-    <path d="M49.2 17.6h9.2v2.2h-9.2z" />
+    <path d="M48 16.6 56.5 15.2 56.8 16.4 49 18z" fill="#3d5a72" />
+    <!-- Fuselage: rounded nose, tapered tail cone -->
+    <path d="M5.5 16.5
+             C5.5 14.9 8 14 13 13.8
+             L46 13.6
+             L57 15
+             L46 17.4
+             L13 18.7
+             C8 18.6 5.5 18.1 5.5 16.5 Z" />
+    <!-- Near wing, swept down and back -->
+    <path d="M27 16 41.5 23.4 45 23.4 34 15.8z" />
+    <!-- Engine nacelle under the near wing -->
+    <ellipse cx="35.5" cy="20.4" rx="3.1" ry="1.7" fill="#3d5a72" />
   </g>
-  <!-- Cockpit windows -->
-  <ellipse cx="14.5" cy="15" rx="2.2" ry="1.6" fill="#a8c8dc" opacity="0.8" />
-  <ellipse cx="18.2" cy="15.2" rx="1.4" ry="1.1" fill="#a8c8dc" opacity="0.55" />
-  <!-- Fuselage highlight -->
-  <path
-    d="M12 13.2h38.5"
-    stroke="#7a9bb5"
-    stroke-width="0.6"
-    stroke-linecap="round"
-    opacity="0.45"
-    fill="none"
-  />
+  <!-- Cockpit windscreen -->
+  <path d="M9 15.4 12.2 14.9 12.2 16.4 9 16.7z" fill="#a8c8dc" opacity="0.85" />
+  <!-- Cabin window strip -->
+  <path d="M15 15.3 44 15" stroke="#a8c8dc" stroke-width="0.7"
+        stroke-linecap="round" stroke-dasharray="0.6 1.9" opacity="0.6" fill="none" />
 </svg>

@@ -1,7 +1,5 @@
 ---
 import { site, nav } from '../data/site';
-
-const fullAddress = `${site.address.line1}, ${site.address.line2}, ${site.address.city}, ${site.address.state} ${site.address.zip}`;
 ---
 
 <footer class="footer">
@@ -22,12 +20,6 @@ const fullAddress = `${site.address.line1}, ${site.address.line2}, ${site.addres
         <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
           Facebook
         </a>
-        <a href={site.social.instagram} target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-          Instagram
-        </a>
-        <a href={site.social.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-          LinkedIn
-        </a>
       </div>
     </div>
 
@@ -45,7 +37,7 @@ const fullAddress = `${site.address.line1}, ${site.address.line2}, ${site.addres
       <ul class="footer__links footer__contact">
         <li><a href={site.phoneHref}>{site.phone}</a></li>
         <li><a href={`mailto:${site.email}`}>{site.email}</a></li>
-        <li>{fullAddress}</li>
+        <li>{site.serviceArea}</li>
       </ul>
     </div>
 

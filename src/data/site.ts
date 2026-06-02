@@ -9,17 +9,13 @@ export const site = {
   phoneHref: 'tel:+14794205184',
   email: 'info@gotravelhelpers.com',
   address: {
-    line1: '123 Main Street',
-    line2: 'Suite 100',
     city: 'Fayetteville',
     state: 'AR',
-    zip: '72701',
     country: 'United States',
   },
+  serviceArea: 'Based in Fayetteville, AR · Serving travelers worldwide',
   social: {
     facebook: 'https://www.facebook.com/profile.php?id=100083484635385',
-    instagram: 'https://instagram.com/gotravelhelpers',
-    linkedin: 'https://linkedin.com/company/gotravelhelpers',
   },
   founder: {
     name: 'Cyndi Glidewell',

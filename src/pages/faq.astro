@@ -1,9 +1,26 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { faqs, site } from '../data/site';
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((item) => ({
+    '@type': 'Question',
+    name: item.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.answer,
+    },
+  })),
+};
 ---
 
-<BaseLayout title="FAQ" description="Frequently asked questions about Travel Helpers travel companion services, pricing, coverage, and medical support.">
+<BaseLayout
+  title="FAQ"
+  description="Frequently asked questions about Travel Helpers travel companion services, pricing, coverage, and medical support."
+  schema={faqSchema}
+>
   <section class="page-hero">
     <div class="container">
       <p class="section-label">FAQ</p>

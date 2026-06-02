@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /logo-preview
+
+Sitemap: https://gotravelhelpers.com/sitemap-index.xml

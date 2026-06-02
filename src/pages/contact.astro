@@ -2,8 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import { site, images } from '../data/site';
-
-const fullAddress = `${site.address.line1}, ${site.address.line2}, ${site.address.city}, ${site.address.state} ${site.address.zip}`;
 ---
 
 <BaseLayout title="Contact" description="Contact Travel Helpers for a personalized travel companion quote. Call 479.420.5184 or email info@gotravelhelpers.com.">
@@ -28,8 +26,8 @@ const fullAddress = `${site.address.line1}, ${site.address.line2}, ${site.addres
             <a href={`mailto:${site.email}`}>{site.email}</a>
           </li>
           <li>
-            <strong>Address</strong>
-            <span>{fullAddress}</span>
+            <strong>Service area</strong>
+            <span>{site.serviceArea}</span>
           </li>
         </ul>
 
@@ -37,8 +35,6 @@ const fullAddress = `${site.address.line1}, ${site.address.line2}, ${site.addres
           <h3>Follow us</h3>
           <div class="social-links">
             <a href={site.social.facebook} target="_blank" rel="noopener noreferrer">Facebook</a>
-            <a href={site.social.instagram} target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href={site.social.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn</a>
           </div>
         </div>
       </div>
