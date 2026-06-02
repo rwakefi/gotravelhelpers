@@ -22,16 +22,15 @@ jobs:
         run: |
           npm ci
           npm run build
-          rm -rf _deploy && mkdir _deploy
-          cp -r dist/. _deploy/
 
       - name: Deploy to IONOS via SFTP
-        uses: wlixcc/SFTP-Deploy-Action@v1.2.5
-        with:
-          server: ${{ secrets.IONOS_FTP_HOST }}
-          username: ${{ secrets.IONOS_FTP_USER }}
-          password: ${{ secrets.IONOS_FTP_PASSWORD }}
-          port: 22
-          local_path: ./_deploy/
-          remote_path: /
-          sftp_only: true
+        env:
+          SFTP_PASS: ${{ secrets.IONOS_FTP_PASSWORD }}
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq lftp
+          lftp -e "
+            set sftp:auto-confirm yes;
+            open -u '${{ secrets.IONOS_FTP_USER }}',${SFTP_PASS} sftp://${{ secrets.IONOS_FTP_HOST }}:22;
+            mirror -R dist/ /;
+            bye
+          "
