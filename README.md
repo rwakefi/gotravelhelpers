@@ -23,7 +23,7 @@ Output goes to `dist/` — upload this folder to IONOS.
 
 ### Option A: Automatic (GitHub → IONOS)
 
-Every push to `main` builds the site and uploads it to IONOS via FTP.
+Every push to `main` builds the site and uploads it to IONOS via SFTP (port 22).
 
 **One-time setup:**
 
@@ -32,21 +32,21 @@ Every push to `main` builds the site and uploads it to IONOS via FTP.
 
    | Secret name | Value |
    |-------------|--------|
-   | `IONOS_FTP_HOST` | Your IONOS FTP host (e.g. `ftp.gotravelhelpers.com` or the host shown in IONOS) |
-   | `IONOS_FTP_USER` | FTP username from IONOS |
-   | `IONOS_FTP_PASSWORD` | FTP password from IONOS |
+   | `IONOS_FTP_HOST` | SFTP server host from IONOS (e.g. `access-XXXX.webspace-host.com`) |
+   | `IONOS_FTP_USER` | SFTP username from IONOS |
+   | `IONOS_FTP_PASSWORD` | SFTP password you set when creating the account |
 
-3. Find FTP credentials in **IONOS → Hosting → FTP access** (Web Hosting plan required, not Website Builder).
+3. Find SFTP credentials in **IONOS → Hosting → SFTP** (Web Hosting plan required, not Website Builder).
 4. Push to `main` — the **Deploy to IONOS** workflow runs automatically.
 
 To deploy manually without pushing code, use **Actions → Deploy to IONOS → Run workflow**.
 
-**Note:** `server-dir` in `.github/workflows/deploy.yml` is set to `./` (web root). If IONOS uses a subfolder like `/public_html`, change `server-dir` to match.
+**Note:** `remoteDir` in `.github/workflows/deploy.yml` is set to `/` (web root). If uploads land in the wrong place, change `remoteDir` to your IONOS web folder (e.g. `/htdocs/`).
 
-### Option B: Manual FTP
+### Option B: Manual SFTP
 
 1. Run `npm run build`
-2. Upload the contents of `dist/` to your IONOS web root via FTP/SFTP
+2. Upload the contents of `dist/` to your IONOS web root via SFTP (port 22)
 
 ## Push to GitHub
 
