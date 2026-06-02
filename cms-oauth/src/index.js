@@ -9,19 +9,45 @@ const corsHeaders = {
   'Access-Control-Allow-Headers': 'Content-Type',
 };
 
+const allowedOrigins = [
+  'gotravelhelpers.com',
+  'www.gotravelhelpers.com',
+  'localhost:4321',
+  'localhost:4322',
+];
+
 function authPage(token) {
-  const payload = JSON.stringify({ token, provider: 'github' });
-  const message = `authorization:github:success:${payload}`;
-  // postMessage target must be the admin site origin, not the worker origin
-  const siteOrigin = 'https://gotravelhelpers.com';
+  const successMessage = `authorization:github:success:${JSON.stringify({ token, provider: 'github' })}`;
   return `<!doctype html><html><body><script>
-    (function () {
-      if (window.opener) {
-        window.opener.postMessage(${JSON.stringify(message)}, ${JSON.stringify(siteOrigin)});
-      }
-      window.close();
-    })();
-  </script></body></html>`;
+(function () {
+  const allowedOrigins = ${JSON.stringify(allowedOrigins)};
+  const successMessage = ${JSON.stringify(successMessage)};
+
+  function normalizeOrigin(origin) {
+    return origin.replace(/^https?:\\/\\//, '');
+  }
+
+  function isAllowedOrigin(origin) {
+    const normalized = normalizeOrigin(origin);
+    return allowedOrigins.some((entry) => normalized === entry || normalized.endsWith('.' + entry));
+  }
+
+  function receiveMessage(event) {
+    if (!isAllowedOrigin(event.origin)) {
+      return;
+    }
+
+    window.opener.postMessage(successMessage, event.origin);
+    window.close();
+  }
+
+  window.addEventListener('message', receiveMessage, false);
+
+  if (window.opener) {
+    window.opener.postMessage('authorizing:github', '*');
+  }
+})();
+</script></body></html>`;
 }
 
 function errorPage(message) {
@@ -52,7 +78,11 @@ export default {
       const authUrl = new URL('https://github.com/login/oauth/authorize');
       authUrl.searchParams.set('client_id', clientId);
       authUrl.searchParams.set('redirect_uri', callbackUrl);
-      authUrl.searchParams.set('scope', 'repo,user');
+      authUrl.searchParams.set('scope', 'public_repo,user');
+      const state = url.searchParams.get('state');
+      if (state) {
+        authUrl.searchParams.set('state', state);
+      }
       return Response.redirect(authUrl.toString(), 302);
     }
 
