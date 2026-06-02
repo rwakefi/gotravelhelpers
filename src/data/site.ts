@@ -31,38 +31,38 @@ export const site = {
 export const images = {
   hero: {
     src: '/images/hero.jpg',
-    alt: 'Traveler with luggage at the airport, ready for a supported journey',
+    alt: 'Senior travelers with luggage at the airport, ready for their journey',
     width: 1200,
     height: 1500,
   },
   mission: {
     src: '/images/mission.jpg',
-    alt: 'Travelers walking together on a scenic outdoor path',
+    alt: 'Senior couple walking together while traveling',
     width: 1000,
     height: 750,
   },
   about: {
     src: '/images/about.jpg',
-    alt: 'Couple enjoying a coastal view during their vacation',
+    alt: 'Older adults enjoying a trip together outdoors',
     width: 1000,
     height: 1250,
   },
   pageHero: {
     services: {
       src: '/images/airport.jpg',
-      alt: 'Busy airport terminal with travelers',
+      alt: 'Traveler in a wheelchair at the airport with assistance',
     },
     howItWorks: {
       src: '/images/planning.jpg',
-      alt: 'Travel map and planning materials on a table',
+      alt: 'Senior traveler reviewing trip plans and documents',
     },
     contact: {
       src: '/images/contact.jpg',
-      alt: 'Airplane at the gate, ready for departure',
+      alt: 'Older adults preparing to travel through an airport terminal',
     },
     about: {
       src: '/images/group-travel.jpg',
-      alt: 'Group of friends traveling together',
+      alt: 'Group of senior friends traveling together',
     },
   },
 } as const;
@@ -82,7 +82,7 @@ export const services = [
       'Support from arrival at the airport through check-in, security, boarding, and baggage claim — so no step feels overwhelming.',
     icon: 'plane',
     image: '/images/airport.jpg',
-    imageAlt: 'Travelers moving through a modern airport terminal',
+    imageAlt: 'Traveler using a wheelchair in an airport terminal',
   },
   {
     title: 'In-Flight Companion',
@@ -90,7 +90,7 @@ export const services = [
       'A trusted companion by your side in the air, offering reassurance, assistance, and attentive care throughout the flight.',
     icon: 'heart',
     image: '/images/flight.jpg',
-    imageAlt: 'View from an airplane window above the clouds',
+    imageAlt: 'Senior passenger seated on an airplane during a flight',
   },
   {
     title: 'Door-to-Door Travel',
@@ -98,7 +98,7 @@ export const services = [
       'Complete journey support from your home to your final destination, including ground transportation coordination.',
     icon: 'home',
     image: '/images/door-to-door.jpg',
-    imageAlt: 'Airplane cabin ready for passengers boarding',
+    imageAlt: 'Traveler in a wheelchair ready for door-to-door assistance',
   },
   {
     title: 'Lodging Support',
@@ -106,7 +106,7 @@ export const services = [
       'Help settling into hotels and accommodations along the way, so every stop is comfortable and stress-free.',
     icon: 'bed',
     image: '/images/hotel.jpg',
-    imageAlt: 'Comfortable hotel room prepared for guests',
+    imageAlt: 'Senior traveler settling into a comfortable hotel room',
   },
   {
     title: 'Multi-Day & Full-Trip',
@@ -114,7 +114,7 @@ export const services = [
       'Companion support for entire vacations, relocations, or extended travel — from first departure to safe return home.',
     icon: 'calendar',
     image: '/images/calendar.jpg',
-    imageAlt: 'Scenic mountain landscape on a multi-day journey',
+    imageAlt: 'Older couple on a multi-day sightseeing trip',
   },
   {
     title: 'Trip Planning & Logistics',
@@ -122,7 +122,7 @@ export const services = [
       'Flights, hotels, accessibility research, and itinerary planning tailored to your needs and comfort level.',
     icon: 'map',
     image: '/images/planning.jpg',
-    imageAlt: 'Map and travel notes spread out for trip planning',
+    imageAlt: 'Senior traveler planning an accessible itinerary',
   },
   {
     title: 'Medical Travel Support',
@@ -130,7 +130,7 @@ export const services = [
       'Experienced nursing background for travelers with medical needs — coordinated, compassionate, and professional.',
     icon: 'medical',
     image: '/images/medical.jpg',
-    imageAlt: 'Caregiver offering supportive assistance to a traveler',
+    imageAlt: 'Caregiver supporting a senior traveler with medical needs',
   },
 ] as const;
 
@@ -139,25 +139,25 @@ export const audiences = [
     title: 'Seniors traveling independently',
     description: 'Regain confidence to visit family, attend events, or explore the world on your own terms.',
     image: '/images/audience-seniors.jpg',
-    imageAlt: 'Senior traveler smiling with luggage at the airport',
+    imageAlt: 'Senior traveler with luggage at the airport',
   },
   {
     title: 'Adult children arranging care',
     description: 'Peace of mind knowing a professional companion is with your loved one every step of the way.',
     image: '/images/audience-family.jpg',
-    imageAlt: 'Family members together in a bright, welcoming space',
+    imageAlt: 'Family helping an older loved one prepare for travel',
   },
   {
     title: 'Medical & mobility needs',
     description: 'Thoughtful support for appointments, treatments, recovery travel, and specialized requirements.',
     image: '/images/audience-medical.jpg',
-    imageAlt: 'Compassionate caregiver supporting someone during travel',
+    imageAlt: 'Traveler in a wheelchair receiving assistance at the airport',
   },
   {
     title: 'Bucket-list adventures',
     description: 'Make dream destinations a reality with a companion who handles the details while you enjoy the moment.',
     image: '/images/audience-adventure.jpg',
-    imageAlt: 'Travelers hiking together on a scenic trail',
+    imageAlt: 'Senior travelers enjoying a bucket-list destination together',
   },
 ] as const;
 
