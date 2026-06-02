@@ -30,7 +30,7 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
     </div>
   </section>
 
-  <section class="section">
+  <section class="section section--home">
     <div class="container">
       <p class="section-label">Who we help</p>
       <h2 class="section-title">Travel made possible for everyone</h2>
@@ -55,7 +55,7 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
     </div>
   </section>
 
-  <section class="section section--alt">
+  <section class="section section--home section--alt">
     <div class="container">
       <p class="section-label">Our services</p>
       <h2 class="section-title">Everything you need, door to door</h2>
@@ -88,36 +88,7 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
     </div>
   </section>
 
-  <section class="section editorial">
-    <div class="container editorial__grid">
-      <div class="editorial__image">
-        <img
-          src={images.mission.src}
-          alt={images.mission.alt}
-          width={images.mission.width}
-          height={images.mission.height}
-          loading="lazy"
-        />
-      </div>
-      <div class="editorial__content">
-        <p class="section-label">Our mission</p>
-        <h2>Companion support for every mile</h2>
-        <p>
-          Don&rsquo;t let getting there keep you from going. We have expanded our services to include staying with you throughout your adventure — providing assistance at cruise ports, historic sites, theme parks, and every moment in between.
-        </p>
-        <p>
-          While you are on your vacation, we are working. A lot of people need just a little help to achieve their travel dreams — and that is exactly what we are here for.
-        </p>
-        <p>
-          <strong>{site.founder.name}, {site.founder.credentials}</strong><br />
-          {site.founder.title}, {site.name}
-        </p>
-        <a href="/about" class="btn btn--secondary">Our Story</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--alt">
+  <section class="section section--home">
     <div class="container">
       <p class="section-label">Recent adventures</p>
       <h2 class="section-title">Lots of TH travels lately!</h2>
@@ -140,7 +111,7 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
     </div>
   </section>
 
-  <section class="section editorial editorial--note">
+  <section class="section section--alt editorial editorial--note">
     <div class="container editorial__grid">
       <div class="editorial__content">
         <p class="section-label">Travel wisely</p>
@@ -168,8 +139,12 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
 </BaseLayout>
 
 <style>
+  .section--home {
+    padding: 4.25rem 0;
+  }
+
   .hero {
-    padding: 3rem 0 0;
+    padding: 3rem 0 4.25rem;
     overflow: hidden;
   }
 
@@ -225,15 +200,24 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
     border-radius: var(--radius);
   }
 
+  .section-intro {
+    margin-bottom: 0;
+  }
+
   .audience-grid {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
   }
 
   .audience-card {
     display: grid;
     gap: 1.5rem;
-    padding: 2rem 0;
+    padding: 1.75rem 0;
     border-top: 1px solid var(--color-border);
+  }
+
+  .audience-card:first-child {
+    padding-top: 0;
+    border-top: none;
   }
 
   @media (min-width: 640px) {
@@ -267,8 +251,8 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
 
   .services-grid {
     display: grid;
-    gap: 1.5rem;
-    margin-top: 3rem;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
   }
 
   @media (min-width: 768px) {
@@ -284,27 +268,21 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
   }
 
   .section-cta {
-    margin-top: 2.5rem;
+    margin-top: 2rem;
     text-align: center;
   }
 
   .editorial__grid {
     display: grid;
-    gap: 3rem;
-    align-items: center;
+    gap: 2.5rem;
+    align-items: start;
   }
 
   @media (min-width: 768px) {
     .editorial__grid {
-      grid-template-columns: 1.1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
     }
-  }
-
-  .editorial__image img {
-    width: 100%;
-    aspect-ratio: 4 / 3;
-    object-fit: cover;
-    border-radius: var(--radius);
   }
 
   .editorial__content h2 {
@@ -322,7 +300,7 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
   }
 
   .adventures-grid {
-    margin-top: 3rem;
+    margin-top: 2.5rem;
   }
 
   .adventure-card {
@@ -370,7 +348,7 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
   .founder-note__gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
+    gap: 1rem;
   }
 
   .founder-note__gallery img {
@@ -381,6 +359,7 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
   }
 
   .cta-banner {
+    padding: 3.25rem 0;
     background: var(--color-accent);
     color: #fff;
   }
