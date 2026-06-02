@@ -12,7 +12,8 @@
   --font-serif: 'Cormorant Garamond', Georgia, serif;
   --font-sans: 'Outfit', system-ui, sans-serif;
   --max-width: 72rem;
-  --header-height: 5.25rem;
+  --header-height: 5.5rem;
+  --header-float-pad: 0.75rem;
   --radius: 0.25rem;
   --shadow: 0 1rem 3rem rgba(20, 20, 20, 0.08);
 }
@@ -51,6 +52,15 @@ img {
 .hero__cloud,
 .hero__plane {
   border: none;
+}
+
+.page-home .header {
+  background: transparent;
+}
+
+.page-home main > .hero--sky {
+  margin-top: calc(-1 * var(--header-height));
+  padding-top: var(--header-height);
 }
 
 a {

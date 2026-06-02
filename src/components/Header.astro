@@ -3,44 +3,58 @@ import { site, nav } from '../data/site';
 ---
 
 <header class="header" id="site-header">
-  <div class="container header__inner">
-    <a href="/" class="header__logo">
-      <img
-        src={site.logo.src}
-        alt={site.logo.alt}
-        width={site.logo.width}
-        height={site.logo.height}
-        loading="eager"
-        decoding="async"
-      />
-    </a>
-    <nav class="header__nav" aria-label="Main navigation">
+  <div class="container header__wrap">
+    <div class="header__bar">
+      <div class="header__left">
+        <nav class="header__nav" aria-label="Main navigation">
+          {
+            nav.map((item) => (
+              <a href={item.href} class="header__link">
+                {item.label}
+              </a>
+            ))
+          }
+        </nav>
+        <a href="/" class="header__logo header__logo--mobile">
+          <img
+            src={site.logo.src}
+            alt={site.logo.alt}
+            width={site.logo.width}
+            height={site.logo.height}
+            loading="eager"
+            decoding="async"
+          />
+        </a>
+        <button class="header__menu-btn" aria-label="Open menu" aria-expanded="false" id="menu-btn">
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+      <a href="/" class="header__logo header__logo--desktop">
+        <img
+          src={site.logo.src}
+          alt={site.logo.alt}
+          width={site.logo.width}
+          height={site.logo.height}
+          loading="eager"
+          decoding="async"
+        />
+      </a>
+      <div class="header__right">
+        <a href={site.phoneHref} class="header__cta">
+          {site.phone}
+        </a>
+      </div>
+    </div>
+    <nav class="header__mobile" id="mobile-nav" aria-label="Mobile navigation" hidden>
       {
         nav.map((item) => (
-          <a href={item.href} class="header__link">
-            {item.label}
-          </a>
+          <a href={item.href}>{item.label}</a>
         ))
       }
+      <a href="/contact" class="header__cta header__cta--mobile">Get a Quote</a>
     </nav>
-    <div class="header__actions">
-      <a href={site.phoneHref} class="header__cta btn btn--primary">
-        {site.phone}
-      </a>
-      <button class="header__menu-btn" aria-label="Open menu" aria-expanded="false" id="menu-btn">
-        <span></span>
-        <span></span>
-      </button>
-    </div>
   </div>
-  <nav class="header__mobile" id="mobile-nav" aria-label="Mobile navigation" hidden>
-    {
-      nav.map((item) => (
-        <a href={item.href}>{item.label}</a>
-      ))
-    }
-    <a href="/contact" class="btn btn--primary">Get a Quote</a>
-  </nav>
 </header>
 
 <script>
@@ -64,45 +78,81 @@ import { site, nav } from '../data/site';
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(255, 255, 255, 0.98);
-    backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(20, 20, 20, 0.06);
+    padding: 0.75rem 0 0.35rem;
+    background: transparent;
+    pointer-events: none;
   }
 
-  .header__inner {
+  .header__wrap {
+    pointer-events: auto;
+  }
+
+  .header__bar {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 1rem;
+    min-height: 4.25rem;
+    padding: 0.5rem 1.25rem;
+    background: rgba(255, 255, 255, 0.68);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 1.125rem;
+    box-shadow:
+      0 4px 24px rgba(20, 20, 20, 0.06),
+      0 1px 2px rgba(20, 20, 20, 0.04);
+  }
+
+  .header__left {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 2rem;
-    height: var(--header-height);
+    justify-self: start;
+    gap: 0.75rem;
+  }
+
+  .header__right {
+    display: flex;
+    align-items: center;
+    justify-self: end;
   }
 
   .header__logo {
     display: flex;
     align-items: center;
+    justify-self: center;
     flex-shrink: 0;
   }
 
   .header__logo img {
     display: block;
-    width: clamp(9rem, 16vw, 13rem);
+    width: clamp(8.5rem, 14vw, 12rem);
     height: auto;
-    max-height: calc(var(--header-height) - 0.65rem);
+    max-height: 3.25rem;
     object-fit: contain;
+  }
+
+  .header__logo--desktop {
+    display: none;
+  }
+
+  .header__logo--mobile {
+    display: flex;
+    margin-right: auto;
   }
 
   .header__nav {
     display: none;
     align-items: center;
-    gap: 1.75rem;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 1.5rem;
   }
 
   .header__link {
-    font-size: 0.9375rem;
-    font-weight: 400;
-    color: var(--color-text-muted);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(20, 20, 20, 0.72);
     white-space: nowrap;
     transition: color 0.2s;
   }
@@ -111,19 +161,27 @@ import { site, nav } from '../data/site';
     color: var(--color-text);
   }
 
-  .header__actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    flex-shrink: 0;
-  }
-
   .header__cta {
     display: none;
-    font-size: 0.875rem;
-    padding: 0.6rem 1.35rem;
-    border-radius: 999px;
+    align-items: center;
+    justify-content: center;
+    padding: 0.65rem 1.25rem;
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #fff;
+    background: #2a2420;
+    border: none;
+    border-radius: 0.5rem;
     white-space: nowrap;
+    transition: background 0.2s;
+  }
+
+  .header__cta:hover {
+    background: #141414;
+    color: #fff;
   }
 
   .header__menu-btn {
@@ -137,6 +195,7 @@ import { site, nav } from '../data/site';
     background: none;
     border: none;
     cursor: pointer;
+    flex-shrink: 0;
   }
 
   .header__menu-btn span {
@@ -149,28 +208,76 @@ import { site, nav } from '../data/site';
   .header__mobile {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem;
-    border-top: 1px solid var(--color-border);
-    background: #fff;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    padding: 1.25rem 1.5rem;
+    background: rgba(255, 255, 255, 0.78);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    box-shadow: 0 8px 28px rgba(20, 20, 20, 0.08);
   }
 
-  .header__mobile a {
-    font-size: 1.05rem;
-    padding: 0.25rem 0;
+  .header__mobile a:not(.header__cta) {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.35rem 0;
+    color: var(--color-text-muted);
+  }
+
+  .header__cta--mobile {
+    display: inline-flex;
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+
+  @media (max-width: 959px) {
+    .header__bar {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.45rem 1rem;
+    }
+
+    .header__left {
+      flex: 1;
+      justify-content: space-between;
+    }
+
+    .header__logo--desktop {
+      display: none;
+    }
+
+    .header__right {
+      display: none;
+    }
   }
 
   @media (min-width: 960px) {
+    .header__bar {
+      padding: 0.5rem 1.75rem;
+    }
+
     .header__nav {
       display: flex;
     }
 
-    .header__cta {
-      display: inline-flex;
+    .header__logo--desktop {
+      display: flex;
+    }
+
+    .header__logo--mobile {
+      display: none;
     }
 
     .header__menu-btn {
       display: none;
+    }
+
+    .header__cta:not(.header__cta--mobile) {
+      display: inline-flex;
     }
 
     .header__mobile {
