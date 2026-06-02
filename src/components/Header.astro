@@ -84,13 +84,9 @@ import { site, nav } from '../data/site';
   .header__logo img {
     display: block;
     width: auto;
-    height: 2.85rem;
-  }
-
-  @media (min-width: 960px) {
-    .header__logo img {
-      height: 3.1rem;
-    }
+    height: clamp(2.75rem, 6.5vw, 3.65rem);
+    max-width: min(15.5rem, 62vw);
+    object-fit: contain;
   }
 
   .header__nav {

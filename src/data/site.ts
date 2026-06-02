@@ -29,8 +29,8 @@ export const site = {
   logo: {
     src: '/images/logo.png',
     alt: 'Travel Helpers',
-    width: 280,
-    height: 72,
+    width: 1240,
+    height: 346,
   },
 } as const;
 
