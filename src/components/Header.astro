@@ -83,9 +83,9 @@ import { site, nav } from '../data/site';
 
   .header__logo img {
     display: block;
-    width: auto;
-    height: clamp(2.75rem, 6.5vw, 3.65rem);
-    max-width: min(15.5rem, 62vw);
+    width: clamp(10.5rem, 20vw, 15.5rem);
+    height: auto;
+    max-height: calc(var(--header-height) - 0.5rem);
     object-fit: contain;
   }
 
