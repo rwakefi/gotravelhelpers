@@ -1,18 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { site, steps } from '../data/site';
+import PageHero from '../components/PageHero.astro';
+import { site, steps, images } from '../data/site';
 ---
 
 <BaseLayout title="How It Works" description="Learn how Go Travel Helpers plans and delivers door-to-door travel companion support — from first inquiry to safe arrival.">
-  <section class="page-hero">
-    <div class="container">
-      <p class="section-label">The process</p>
-      <h1>From first call to safe arrival</h1>
-      <p>
-        We make getting started simple. Tell us about your trip, and we handle the rest — planning, coordination, and companion support every step of the way.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    label="The process"
+    title="From first call to safe arrival"
+    description="We make getting started simple. Tell us about your trip, and we handle the rest — planning, coordination, and companion support every step of the way."
+    image={images.pageHero.howItWorks}
+  />
 
   <section class="section">
     <div class="container process-list">

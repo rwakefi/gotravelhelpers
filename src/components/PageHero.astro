@@ -1,0 +1,74 @@
+---
+interface Props {
+  label?: string;
+  title: string;
+  description?: string;
+  image?: { src: string; alt: string };
+}
+
+const { label, title, description, image } = Astro.props;
+---
+
+<section class:list={['page-hero', image && 'page-hero--image']}>
+  {
+    image && (
+      <div class="page-hero__media" aria-hidden="true">
+        <img src={image.src} alt="" loading="eager" />
+      </div>
+    )
+  }
+  <div class="container page-hero__content">
+    {label && <p class="section-label">{label}</p>}
+    <h1>{title}</h1>
+    {description && <p>{description}</p>}
+  </div>
+</section>
+
+<style>
+  .page-hero--image {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    padding: 8rem 0 5rem;
+    min-height: 22rem;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .page-hero--image .section-label {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .page-hero--image p:not(.section-label) {
+    color: rgba(255, 255, 255, 0.9);
+  }
+
+  .page-hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .page-hero__media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(20, 20, 20, 0.88) 0%,
+      rgba(20, 20, 20, 0.45) 55%,
+      rgba(20, 20, 20, 0.25) 100%
+    );
+  }
+
+  .page-hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .page-hero__content {
+    position: relative;
+    z-index: 1;
+  }
+</style>

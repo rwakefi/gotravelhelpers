@@ -1,18 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { site, services } from '../data/site';
+import PageHero from '../components/PageHero.astro';
+import { site, services, images } from '../data/site';
 ---
 
 <BaseLayout title="Services" description="Full-service travel companion support — airport, in-flight, door-to-door, lodging, planning, and medical travel assistance worldwide.">
-  <section class="page-hero">
-    <div class="container">
-      <p class="section-label">What we offer</p>
-      <h1>Companion services for every leg of the journey</h1>
-      <p>
-        From the moment you leave home to the moment you arrive safely at your destination, Go Travel Helpers provides comprehensive support tailored to your needs.
-      </p>
-    </div>
-  </section>
+  <PageHero
+    label="What we offer"
+    title="Companion services for every leg of the journey"
+    description="From the moment you leave home to the moment you arrive safely at your destination, Go Travel Helpers provides comprehensive support tailored to your needs."
+    image={images.pageHero.services}
+  />
 
   <section class="section">
     <div class="container services-list">
@@ -23,8 +21,8 @@ import { site, services } from '../data/site';
               <h2>{service.title}</h2>
               <p>{service.description}</p>
             </div>
-            <div class="service-row__visual" aria-hidden="true">
-              <span>{String(i + 1).padStart(2, '0')}</span>
+            <div class="service-row__visual">
+              <img src={service.image} alt={service.imageAlt} width={400} height={300} loading="lazy" />
             </div>
           </article>
         ))
@@ -84,16 +82,24 @@ import { site, services } from '../data/site';
   }
 
   .service-row__visual {
-    width: 6rem;
-    height: 6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-bg-alt);
-    border-radius: 50%;
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    color: var(--color-accent);
+    width: 100%;
+    max-width: 14rem;
+    aspect-ratio: 4 / 3;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+  }
+
+  .service-row__visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (min-width: 768px) {
+    .service-row__visual {
+      max-width: 18rem;
+    }
   }
 
   .centered-cta {
