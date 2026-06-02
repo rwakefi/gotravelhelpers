@@ -4,7 +4,16 @@ import { site, nav } from '../data/site';
 
 <header class="header">
   <div class="container header__inner">
-    <a href="/" class="header__logo">{site.name}</a>
+    <a href="/" class="header__logo">
+      <img
+        src={site.logo.src}
+        alt={site.logo.alt}
+        width={site.logo.width}
+        height={site.logo.height}
+        loading="eager"
+        decoding="async"
+      />
+    </a>
     <nav class="header__nav" aria-label="Main navigation">
       {
         nav.map((item) => (
@@ -67,10 +76,15 @@ import { site, nav } from '../data/site';
   }
 
   .header__logo {
-    font-family: var(--font-serif);
-    font-size: 1.35rem;
-    font-weight: 600;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .header__logo img {
+    display: block;
+    width: auto;
+    height: 2.35rem;
   }
 
   .header__nav {

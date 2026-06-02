@@ -7,7 +7,16 @@ const fullAddress = `${site.address.line1}, ${site.address.line2}, ${site.addres
 <footer class="footer">
   <div class="container footer__grid">
     <div class="footer__brand">
-      <a href="/" class="footer__logo">{site.name}</a>
+      <a href="/" class="footer__logo">
+        <img
+          src={site.logo.src}
+          alt={site.logo.alt}
+          width={site.logo.width}
+          height={site.logo.height}
+          loading="lazy"
+          decoding="async"
+        />
+      </a>
       <p class="footer__tagline">{site.tagline}</p>
       <div class="footer__social">
         <a href={site.social.facebook} target="_blank" rel="noopener noreferrer" aria-label="Facebook">
@@ -74,12 +83,16 @@ const fullAddress = `${site.address.line1}, ${site.address.line2}, ${site.addres
   }
 
   .footer__logo {
-    font-family: var(--font-serif);
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: #fff;
     display: inline-block;
     margin-bottom: 0.75rem;
+  }
+
+  .footer__logo img {
+    display: block;
+    width: auto;
+    height: 2.5rem;
+    filter: brightness(0) invert(1);
+    opacity: 0.95;
   }
 
   .footer__tagline {

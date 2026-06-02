@@ -26,6 +26,12 @@ export const site = {
     credentials: 'RN, MBA',
     title: 'Founder',
   },
+  logo: {
+    src: '/images/logo.png',
+    alt: 'Travel Helpers',
+    width: 280,
+    height: 72,
+  },
 } as const;
 
 export const images = {

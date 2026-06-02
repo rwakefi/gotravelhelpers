@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const options = [
+  {
+    id: 1,
+    name: 'Wordmark',
+    file: '/images/logos/logo-option-1-wordmark.png',
+    note: 'Clean serif name only — matches your site typography feel.',
+  },
+  {
+    id: 2,
+    name: 'Icon + wordmark',
+    file: '/images/logos/logo-option-2-icon-wordmark.png',
+    note: 'Path-with-heart icon — companion care + journey.',
+  },
+  {
+    id: '2c',
+    name: 'Icon + wordmark (final)',
+    file: '/images/logos/logo-option-2-final.png',
+    note: 'Heart, stethoscope, and plane — suitcase removed.',
+    featured: true,
+  },
+  {
+    id: 3,
+    name: 'Monogram',
+    file: '/images/logos/logo-option-3-monogram.png',
+    note: 'TH badge — compact for favicon and social avatars.',
+  },
+  {
+    id: 4,
+    name: 'Journey mark',
+    file: '/images/logos/logo-option-4-journey-mark.png',
+    note: 'A-to-B path with accessibility cue — mission-focused.',
+  },
+];
+---
+
+<BaseLayout title="Logo preview" description="Logo concept previews for Travel Helpers">
+  <section class="section">
+    <div class="container">
+      <p class="section-label">Brand exploration</p>
+      <h1 class="section-title">Travel Helpers logo options</h1>
+      <p class="section-intro">
+        Four concepts using your site colors (burgundy <code>#9e3b3b</code>, cream <code>#f7f5f2</code>).
+        Pick a direction and we can refine or rebuild as SVG for the header.
+      </p>
+
+      <div class="logo-grid">
+        {
+          options.map((opt) => (
+            <article class:list={['logo-card', opt.featured && 'logo-card--featured']}>
+              <span class="logo-card__label">Option {opt.id}</span>
+              <h2>{opt.name}</h2>
+              <div class="logo-card__preview logo-card__preview--light">
+                <img src={opt.file} alt={`Logo option ${opt.id}: ${opt.name}`} />
+              </div>
+              <div class="logo-card__preview logo-card__preview--dark">
+                <img src={opt.file} alt="" aria-hidden="true" />
+              </div>
+              <p>{opt.note}</p>
+            </article>
+          ))
+        }
+      </div>
+
+      <p class="logo-footer">
+        <a href="/">← Back to site</a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .logo-grid {
+    display: grid;
+    gap: 2.5rem;
+    margin-top: 3rem;
+  }
+
+  @media (min-width: 768px) {
+    .logo-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .logo-card {
+    background: var(--color-surface);
+    padding: 1.75rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+
+  .logo-card--featured {
+    border: 2px solid var(--color-accent);
+  }
+
+  .logo-card__label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+  }
+
+  .logo-card h2 {
+    font-size: 1.5rem;
+    margin: 0.35rem 0 1rem;
+  }
+
+  .logo-card__preview {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 8rem;
+    padding: 1.5rem;
+    border-radius: var(--radius);
+    margin-bottom: 0.75rem;
+  }
+
+  .logo-card__preview--light {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+  }
+
+  .logo-card__preview--dark {
+    background: var(--color-text);
+  }
+
+  .logo-card__preview img {
+    max-width: 100%;
+    max-height: 5rem;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .logo-card p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .section-intro code {
+    font-size: 0.85em;
+    color: var(--color-accent);
+  }
+
+  .logo-footer {
+    margin-top: 3rem;
+    text-align: center;
+  }
+
+  .logo-footer a {
+    color: var(--color-accent);
+    font-weight: 500;
+  }
+</style>
