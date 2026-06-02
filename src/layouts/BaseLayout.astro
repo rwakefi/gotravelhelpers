@@ -22,8 +22,8 @@ const pageTitle = title === site.name ? title : `${title} | ${site.name}`;
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{pageTitle}</title>
   </head>
-  <body class:list={[Astro.url.pathname === '/' && 'page-home']}>
-    <Header transparent={Astro.url.pathname === '/'} />
+  <body>
+    <Header />
     <main>
       <slot />
     </main>

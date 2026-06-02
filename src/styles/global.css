@@ -52,11 +52,6 @@ img {
   border: none;
 }
 
-.page-home main > .hero--sky {
-  margin-top: calc(-1 * var(--header-height));
-  padding-top: calc(var(--header-height) + 2rem);
-}
-
 a {
   color: inherit;
   text-decoration: none;
