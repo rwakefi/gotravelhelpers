@@ -23,6 +23,14 @@ jobs:
           npm ci
           npm run build
 
+      - name: Ensure IONOS htdocs folder exists
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq sshpass
+          sshpass -p "${{ secrets.IONOS_FTP_PASSWORD }}" sftp -o StrictHostKeyChecking=no -P 22 \
+            "${{ secrets.IONOS_FTP_USER }}@${{ secrets.IONOS_FTP_HOST }}" <<'EOF' || true
+          mkdir htdocs
+          EOF
+
       - name: Deploy to IONOS via SFTP
         uses: wlixcc/SFTP-Deploy-Action@v1.2.5
         with:
