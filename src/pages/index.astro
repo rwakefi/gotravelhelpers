@@ -75,6 +75,19 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
     </div>
   </section>
 
+  <section class="section cta-banner">
+    <div class="container cta-banner__inner">
+      <div>
+        <h2>Ready to plan your trip?</h2>
+        <p>Contact us for a personalized quote. No obligation — just a conversation about how we can help.</p>
+      </div>
+      <div class="cta-banner__actions">
+        <a href="/contact" class="btn btn--light">Get a Quote</a>
+        <a href={site.phoneHref} class="btn btn--secondary cta-banner__phone">{site.phone}</a>
+      </div>
+    </div>
+  </section>
+
   <section class="section editorial">
     <div class="container editorial__grid">
       <div class="editorial__image">
@@ -149,19 +162,6 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
             <img src={photo.src} alt={photo.alt} width={400} height={300} loading="lazy" />
           ))
         }
-      </div>
-    </div>
-  </section>
-
-  <section class="section cta-banner">
-    <div class="container cta-banner__inner">
-      <div>
-        <h2>Ready to plan your trip?</h2>
-        <p>Contact us for a personalized quote. No obligation — just a conversation about how we can help.</p>
-      </div>
-      <div class="cta-banner__actions">
-        <a href="/contact" class="btn btn--light">Get a Quote</a>
-        <a href={site.phoneHref} class="btn btn--secondary cta-banner__phone">{site.phone}</a>
       </div>
     </div>
   </section>
