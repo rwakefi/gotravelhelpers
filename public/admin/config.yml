@@ -34,7 +34,7 @@ collections:
           - { label: Tagline, name: tagline, widget: string }
           - { label: Description, name: description, widget: text }
           - { label: Phone, name: phone, widget: string, hint: "Displayed as written, e.g. 479.420.5184" }
-          - { label: Email, name: email, widget: string }
+          - { label: Email, name: email, widget: string, hint: "Public contact email — shown on the site and receives form submissions" }
           - { label: Service area, name: serviceArea, widget: string }
           - label: Address
             name: address

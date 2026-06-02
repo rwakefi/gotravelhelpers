@@ -2,9 +2,13 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import { site, images } from '../data/site';
+
+const formAction = `https://formsubmit.co/${encodeURIComponent(site.email)}`;
+const formReturnUrl = `https://${site.domain}/contact/?sent=1`;
+const formSent = Astro.url.searchParams.get('sent') === '1';
 ---
 
-<BaseLayout title="Contact" description="Contact Travel Helpers for a personalized travel companion quote. Call 479.420.5184 or email info@gotravelhelpers.com.">
+<BaseLayout title="Contact" description={`Contact Travel Helpers for a personalized travel companion quote. Call ${site.phone} or email ${site.email}.`}>
   <PageHero
     label="Get in touch"
     title="Let's plan your journey"
@@ -39,8 +43,21 @@ import { site, images } from '../data/site';
         </div>
       </div>
 
-      <form class="contact-form card" action="#" method="POST">
+      <form class="contact-form card" action={formAction} method="POST">
+        <input type="hidden" name="_subject" value="New quote request — Travel Helpers website" />
+        <input type="hidden" name="_next" value={formReturnUrl} />
+        <input type="hidden" name="_captcha" value="true" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
         <h2>Request a quote</h2>
+
+        {
+          formSent && (
+            <p class="form-success" role="status">
+              Thank you — your message was sent. We'll reply to you at the email you provided, usually within one business day.
+            </p>
+          )
+        }
 
         <div class="form-group">
           <label for="name">Full name</label>
@@ -96,7 +113,7 @@ import { site, images } from '../data/site';
 
         <button type="submit" class="btn btn--primary">Send Inquiry</button>
         <p class="form-note">
-          Form delivery is not yet connected. To reach us now, call <a href={site.phoneHref}>{site.phone}</a> or email <a href={`mailto:${site.email}`}>{site.email}</a>.
+          Or call <a href={site.phoneHref}>{site.phone}</a> or email <a href={`mailto:${site.email}`}>{site.email}</a> directly.
         </p>
       </form>
     </div>
@@ -172,6 +189,14 @@ import { site, images } from '../data/site';
   .contact-form h2 {
     font-size: 1.5rem;
     margin-bottom: 1.5rem;
+  }
+
+  .form-success {
+    padding: 1rem 1.125rem;
+    margin-bottom: 1.5rem;
+    background: rgba(158, 59, 59, 0.08);
+    border: 1px solid rgba(158, 59, 59, 0.2);
+    color: var(--color-text);
   }
 
   .form-note a {
