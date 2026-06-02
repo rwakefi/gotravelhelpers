@@ -1,13 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { site, services, audiences, testimonials, stats, steps, images } from '../data/site';
+import { site, services, audiences, testimonials, stats, images } from '../data/site';
 ---
 
 <BaseLayout title={site.name}>
   <section class="hero">
     <div class="container hero__grid">
       <div class="hero__content">
-        <p class="section-label">Worldwide travel companions</p>
+        <p class="section-label hero__label">Worldwide travel companions</p>
         <h1>{site.motto}</h1>
         <p class="hero__lead">
           {site.description}
@@ -114,27 +114,6 @@ import { site, services, audiences, testimonials, stats, steps, images } from '.
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <p class="section-label">How it works</p>
-      <h2 class="section-title">Simple steps to stress-free travel</h2>
-      <div class="steps-grid">
-        {
-          steps.map((step) => (
-            <article class="step">
-              <span class="step__number">{step.number}</span>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
-            </article>
-          ))
-        }
-      </div>
-      <div class="section-cta">
-        <a href="/how-it-works" class="btn btn--secondary">Learn More</a>
-      </div>
-    </div>
-  </section>
-
   <section class="section section--alt">
     <div class="container">
       <p class="section-label">Testimonials</p>
@@ -186,6 +165,12 @@ import { site, services, audiences, testimonials, stats, steps, images } from '.
       grid-template-columns: 1fr 1fr;
       min-height: calc(100vh - var(--header-height));
     }
+  }
+
+  .hero__label {
+    font-size: clamp(1rem, 1.75vw, 1.25rem);
+    letter-spacing: 0.12em;
+    margin-bottom: 1.25rem;
   }
 
   .hero__content h1 {
@@ -343,42 +328,6 @@ import { site, services, audiences, testimonials, stats, steps, images } from '.
     font-size: 0.875rem;
     color: rgba(247, 245, 242, 0.65);
     letter-spacing: 0.04em;
-  }
-
-  .steps-grid {
-    display: grid;
-    gap: 2rem;
-    margin-top: 3rem;
-  }
-
-  @media (min-width: 768px) {
-    .steps-grid {
-      grid-template-columns: repeat(2, 1fr);
-    }
-  }
-
-  @media (min-width: 1024px) {
-    .steps-grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  .step__number {
-    display: block;
-    font-family: var(--font-serif);
-    font-size: 2.5rem;
-    color: var(--color-accent);
-    margin-bottom: 0.75rem;
-  }
-
-  .step h3 {
-    font-size: 1.35rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .step p {
-    font-size: 0.975rem;
-    color: var(--color-text-muted);
   }
 
   .testimonial p {
