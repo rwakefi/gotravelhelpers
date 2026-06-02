@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { site, services, audiences, testimonials, stats, images } from '../data/site';
+import { site, services, audiences, testimonials, images } from '../data/site';
 ---
 
 <BaseLayout title={site.name}>
@@ -101,16 +101,16 @@ import { site, services, audiences, testimonials, stats, images } from '../data/
     </div>
   </section>
 
-  <section class="section section--dark stats">
-    <div class="container stats__grid">
-      {
-        stats.map((stat) => (
-          <div class="stat">
-            <span class="stat__value">{stat.value}</span>
-            <span class="stat__label">{stat.label}</span>
-          </div>
-        ))
-      }
+  <section class="section cta-banner">
+    <div class="container cta-banner__inner">
+      <div>
+        <h2>Ready to plan your trip?</h2>
+        <p>Contact us for a personalized quote. No obligation — just a conversation about how we can help.</p>
+      </div>
+      <div class="cta-banner__actions">
+        <a href="/contact" class="btn btn--light">Get a Quote</a>
+        <a href={site.phoneHref} class="btn btn--secondary cta-banner__phone">{site.phone}</a>
+      </div>
     </div>
   </section>
 
@@ -130,19 +130,6 @@ import { site, services, audiences, testimonials, stats, images } from '../data/
             </blockquote>
           ))
         }
-      </div>
-    </div>
-  </section>
-
-  <section class="section cta-banner">
-    <div class="container cta-banner__inner">
-      <div>
-        <h2>Ready to plan your trip?</h2>
-        <p>Contact us for a personalized quote. No obligation — just a conversation about how we can help.</p>
-      </div>
-      <div class="cta-banner__actions">
-        <a href="/contact" class="btn btn--light">Get a Quote</a>
-        <a href={site.phoneHref} class="btn btn--secondary cta-banner__phone">{site.phone}</a>
       </div>
     </div>
   </section>
@@ -300,34 +287,6 @@ import { site, services, audiences, testimonials, stats, images } from '../data/
 
   .editorial__content .btn {
     margin-top: 1.5rem;
-  }
-
-  .stats__grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-    text-align: center;
-  }
-
-  @media (min-width: 768px) {
-    .stats__grid {
-      grid-template-columns: repeat(4, 1fr);
-    }
-  }
-
-  .stat__value {
-    display: block;
-    font-family: var(--font-serif);
-    font-size: clamp(1.75rem, 3vw, 2.5rem);
-    font-weight: 600;
-    color: #fff;
-    margin-bottom: 0.35rem;
-  }
-
-  .stat__label {
-    font-size: 0.875rem;
-    color: rgba(247, 245, 242, 0.65);
-    letter-spacing: 0.04em;
   }
 
   .testimonial p {
