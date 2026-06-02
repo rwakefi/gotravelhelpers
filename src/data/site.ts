@@ -4,7 +4,7 @@ export const site = {
   motto: "Don't let getting there keep you from going.",
   tagline: "Don't let getting there keep you from going.",
   description:
-    'Travel Helpers provides travel companions for seniors and people who need extra support when flying or lodging along the way — everything needed to get from point A to point B, for medical needs or that bucket-list trip.',
+    'Travel Helpers provides services ranging from extra hands during air travel to non-critical medical assistance while traveling. We now stay with you throughout your adventure — so you can focus on the experience while we handle the rest.',
   phone: '479.420.5184',
   phoneHref: 'tel:+14794205184',
   email: 'info@gotravelhelpers.com',
@@ -17,7 +17,7 @@ export const site = {
     country: 'United States',
   },
   social: {
-    facebook: 'https://facebook.com/gotravelhelpers',
+    facebook: 'https://www.facebook.com/profile.php?id=100083484635385',
     instagram: 'https://instagram.com/gotravelhelpers',
     linkedin: 'https://linkedin.com/company/gotravelhelpers',
   },
@@ -42,14 +42,14 @@ export const images = {
     height: 1500,
   },
   mission: {
-    src: '/images/mission.jpg',
-    alt: 'Elderly couple traveling together',
+    src: '/images/trip-greece-assist.jpg',
+    alt: 'Travel Helper assisting a client at a historic site abroad',
     width: 1000,
     height: 750,
   },
   about: {
-    src: '/images/about.jpg',
-    alt: 'Elderly couple enjoying a beach vacation together',
+    src: '/images/trip-cruise-group.jpg',
+    alt: 'Travel Helpers team with a client on a cruise vacation',
     width: 1000,
     height: 1250,
   },
@@ -117,10 +117,18 @@ export const services = [
   {
     title: 'Multi-Day & Full-Trip',
     description:
-      'Companion support for entire vacations, relocations, or extended travel — from first departure to safe return home.',
+      'Companion support for entire vacations, relocations, or extended travel — from first departure to safe return home. We stay with you throughout your adventure, not just to get you there.',
     icon: 'calendar',
-    image: '/images/calendar.jpg',
-    imageAlt: 'Retired couple relaxing on a multi-day seaside vacation',
+    image: '/images/trip-cruise-group.jpg',
+    imageAlt: 'Travel Helpers team with a client enjoying a cruise vacation',
+  },
+  {
+    title: 'On-Adventure Assistance',
+    description:
+      'Hands-on support at your destination — cruise excursions, historic sites, theme parks, and daily activities. While you enjoy your vacation, your Travel Helper is working to keep you safe and comfortable.',
+    icon: 'compass',
+    image: '/images/trip-greece-assist.jpg',
+    imageAlt: 'Travel Helper assisting a client entering a historic site',
   },
   {
     title: 'Trip Planning & Logistics',
@@ -194,26 +202,48 @@ export const steps = [
   },
 ] as const;
 
-export const testimonials = [
+export const recentAdventures = [
   {
-    quote:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Our companion made a cross-country trip feel effortless and safe.',
-    name: 'Margaret S.',
-    location: 'Portland, OR',
+    title: 'Royal Caribbean — Eastern Caribbean',
+    description:
+      'Companion support on a Royal Caribbean cruise through the Eastern Caribbean — helping our client navigate ports, excursions, and every detail along the way.',
+    image: '/images/trip-cruise-group.jpg',
+    imageAlt: 'Travel Helpers team with a client on a cruise vacation',
   },
   {
-    quote:
-      'Sed do eiusmod tempor incididunt ut labore. I could finally visit my grandchildren without the anxiety of traveling alone.',
-    name: 'Robert H.',
-    location: 'Chicago, IL',
+    title: 'Las Vegas — 88+ year-old traveler & son',
+    description:
+      'A trip to Las Vegas for an 88-year-old client and his son — proof that age does not have to keep you from the experiences you have been waiting for.',
+    image: '/images/trip-scenic-rail.jpg',
+    imageAlt: 'Travel Helpers client enjoying a scenic excursion',
   },
   {
-    quote:
-      'Ut enim ad minim veniam, quis nostrud exercitation. The planning and in-flight support exceeded our expectations.',
-    name: 'Susan & David K.',
-    location: 'Atlanta, GA',
+    title: 'Norwegian Cruise Line — Greece',
+    description:
+      'An NCL voyage through Greece and the Mediterranean — from cobblestone streets to historic mosques, with a Travel Helper by their side every step.',
+    image: '/images/trip-greece-mosque.jpg',
+    imageAlt: 'Travel Helpers clients visiting the Blue Mosque in Istanbul',
   },
 ] as const;
+
+export const founderNote = {
+  title: 'Travel wisely — a note from Cyndi',
+  intro:
+    'Lots of TH travels lately! There are so many people who need just a little help to achieve their travel dreams. Whether you hire a Travel Helper or not, please read the cruise line or park service description of every excursion and take it to heart.',
+  points: [
+    'On recent excursions, multiple people had mobility issues that were not appropriate for the tour — frustrating and dangerous for everyone involved.',
+    'There are creative ways to take in the sights that may not require stepping up and down on a bus six or seven times or navigating difficult cobblestone.',
+    'For many travelers, simply adding walking sticks for the journey would make a meaningful difference.',
+  ],
+  closing:
+    'Call Travel Helpers to hire your travel assistant today. While you are on your vacation, we are working.',
+  gallery: [
+    { src: '/images/trip-greece-assist.jpg', alt: 'Travel Helper assisting a client at a historic site' },
+    { src: '/images/trip-waterfall-poles.jpg', alt: 'Travel Helper using trekking poles on an excursion' },
+    { src: '/images/trip-greece-donkeys.jpg', alt: 'Navigating cobblestone paths in Greece' },
+    { src: '/images/trip-alps.jpg', alt: 'Alpine scenery on a recent Travel Helpers trip' },
+  ],
+} as const;
 
 export const faqs = [
   {
@@ -245,6 +275,16 @@ export const faqs = [
     question: 'Can you help plan the entire trip?',
     answer:
       'Absolutely. We handle flights, hotels, accessibility research, and full itinerary planning in addition to companion services.',
+  },
+  {
+    question: 'Do you stay with clients during their vacation?',
+    answer:
+      'Yes. We have expanded our services to include staying with you throughout your adventure — not just getting you there. Your Travel Helper provides hands-on assistance at your destination, on excursions, and throughout your trip.',
+  },
+  {
+    question: 'How do I choose the right excursion?',
+    answer:
+      'Always read the cruise line or park service description of each excursion carefully. Be honest about mobility needs — there are often creative ways to enjoy the sights without high bus steps, difficult cobblestone, or terrain that is not a good fit. We can help you plan alternatives.',
   },
   {
     question: 'How far in advance should I book?',

@@ -1,7 +1,22 @@
-# Stock photo credits
+# Photo credits
 
-Photos from [Pexels](https://www.pexels.com) (free to use; no attribution required).
-Theme: senior-aged adults traveling (not young travelers).
+## Trip photos (Travel Helpers)
+Real photos from recent Travel Helpers adventures. Used with permission.
+
+| File | Subject |
+|------|---------|
+| trip-cruise-group.jpg | Travel Helpers team with client on cruise |
+| trip-greece-mosque.jpg | Clients visiting the Blue Mosque, Istanbul |
+| trip-greece-assist.jpg | Travel Helper assisting client at historic site |
+| trip-greece-donkeys.jpg | Cobblestone paths in Greece |
+| trip-alps.jpg | Alpine scenery on a recent trip |
+| trip-waterfall-poles.jpg | Trekking poles on an excursion |
+| trip-scenic-rail.jpg | Scenic railroad excursion |
+| trip-zurich.jpg | Welcome to Zürich, Switzerland |
+
+## Stock photos (Pexels)
+Other site photos from [Pexels](https://www.pexels.com) (free to use; no attribution required).
+Theme: senior-aged adults traveling.
 
 | File | Pexels ID | Subject |
 |------|-----------|---------|

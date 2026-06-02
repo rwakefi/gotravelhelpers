@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { site, services, audiences, testimonials, images } from '../data/site';
+import { site, services, audiences, recentAdventures, founderNote, images } from '../data/site';
 ---
 
 <BaseLayout title={site.name}>
@@ -90,13 +90,65 @@ import { site, services, audiences, testimonials, images } from '../data/site';
         <p class="section-label">Our mission</p>
         <h2>Companion support for every mile</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. We believe travel should never be out of reach — whether the journey is for medical care or a long-awaited adventure.
+          Don&rsquo;t let getting there keep you from going. We have expanded our services to include staying with you throughout your adventure — providing assistance at cruise ports, historic sites, theme parks, and every moment in between.
+        </p>
+        <p>
+          While you are on your vacation, we are working. A lot of people need just a little help to achieve their travel dreams — and that is exactly what we are here for.
         </p>
         <p>
           <strong>{site.founder.name}, {site.founder.credentials}</strong><br />
           {site.founder.title}, {site.name}
         </p>
         <a href="/about" class="btn btn--secondary">Our Story</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <p class="section-label">Recent adventures</p>
+      <h2 class="section-title">Lots of TH travels lately!</h2>
+      <p class="section-intro">
+        From Caribbean cruises to Las Vegas and the Greek isles — here is a glimpse of where Travel Helpers has been making adventures possible.
+      </p>
+      <div class="grid-3 adventures-grid">
+        {
+          recentAdventures.map((trip) => (
+            <article class="adventure-card card">
+              <div class="adventure-card__image">
+                <img src={trip.image} alt={trip.imageAlt} width={600} height={400} loading="lazy" />
+              </div>
+              <h3>{trip.title}</h3>
+              <p>{trip.description}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section class="section editorial editorial--note">
+    <div class="container editorial__grid">
+      <div class="editorial__content">
+        <p class="section-label">Travel wisely</p>
+        <h2>{founderNote.title}</h2>
+        <p>{founderNote.intro}</p>
+        <ul class="founder-note__list">
+          {founderNote.points.map((point) => <li>{point}</li>)}
+        </ul>
+        <p><strong>{founderNote.closing}</strong></p>
+        <p>
+          <strong>{site.founder.name}, {site.founder.credentials}</strong><br />
+          {site.founder.title}, {site.name}
+        </p>
+        <a href={site.phoneHref} class="btn btn--primary">Call {site.phone}</a>
+      </div>
+      <div class="founder-note__gallery">
+        {
+          founderNote.gallery.map((photo) => (
+            <img src={photo.src} alt={photo.alt} width={400} height={300} loading="lazy" />
+          ))
+        }
       </div>
     </div>
   </section>
@@ -110,26 +162,6 @@ import { site, services, audiences, testimonials, images } from '../data/site';
       <div class="cta-banner__actions">
         <a href="/contact" class="btn btn--light">Get a Quote</a>
         <a href={site.phoneHref} class="btn btn--secondary cta-banner__phone">{site.phone}</a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section--alt">
-    <div class="container">
-      <p class="section-label">Testimonials</p>
-      <h2 class="section-title">Stories from the journey</h2>
-      <div class="grid-3">
-        {
-          testimonials.map((item) => (
-            <blockquote class="testimonial card">
-              <p>&ldquo;{item.quote}&rdquo;</p>
-              <footer>
-                <strong>{item.name}</strong>
-                <span>{item.location}</span>
-              </footer>
-            </blockquote>
-          ))
-        }
       </div>
     </div>
   </section>
@@ -289,23 +321,63 @@ import { site, services, audiences, testimonials, images } from '../data/site';
     margin-top: 1.5rem;
   }
 
-  .testimonial p {
-    font-family: var(--font-serif);
-    font-size: 1.2rem;
-    font-style: italic;
-    color: var(--color-text);
-    margin-bottom: 1.5rem;
+  .adventures-grid {
+    margin-top: 3rem;
   }
 
-  .testimonial footer {
-    display: flex;
-    flex-direction: column;
-    gap: 0.15rem;
-    font-size: 0.875rem;
+  .adventure-card {
+    padding: 0;
+    overflow: hidden;
   }
 
-  .testimonial footer span {
+  .adventure-card__image {
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+  }
+
+  .adventure-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .adventure-card h3 {
+    font-size: 1.25rem;
+    padding: 1.25rem 1.25rem 0.5rem;
+  }
+
+  .adventure-card p {
+    font-size: 0.9375rem;
     color: var(--color-text-muted);
+    padding: 0 1.25rem 1.25rem;
+    margin: 0;
+  }
+
+  .editorial--note .editorial__grid {
+    align-items: start;
+  }
+
+  .founder-note__list {
+    margin: 1.25rem 0;
+    padding-left: 1.25rem;
+    color: var(--color-text-muted);
+  }
+
+  .founder-note__list li {
+    margin-bottom: 0.75rem;
+  }
+
+  .founder-note__gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+
+  .founder-note__gallery img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: var(--radius);
   }
 
   .cta-banner {
