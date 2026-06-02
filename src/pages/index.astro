@@ -15,17 +15,19 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
     </div>
     <div class="container hero__grid">
       <div class="hero__content">
-        <a href="/" class="hero__logo-mark">
-          <img
-            src={site.logo.src}
-            alt={site.logo.alt}
-            width={site.logo.width}
-            height={site.logo.height}
-            loading="eager"
-            decoding="async"
-          />
-        </a>
-        <h1>{site.motto}</h1>
+        <div class="hero__headline">
+          <a href="/" class="hero__logo-mark">
+            <img
+              src={site.logo.src}
+              alt={site.logo.alt}
+              width={site.logo.width}
+              height={site.logo.height}
+              loading="eager"
+              decoding="async"
+            />
+          </a>
+          <h1>{site.motto}</h1>
+        </div>
         <p class="hero__lead">
           {site.description}
         </p>
@@ -346,9 +348,16 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
     }
   }
 
-  .hero__logo-mark {
+  .hero__headline {
     display: inline-block;
+    max-width: 100%;
+    text-align: center;
     margin-bottom: 1.5rem;
+  }
+
+  .hero__logo-mark {
+    display: block;
+    margin-bottom: 1.25rem;
   }
 
   .hero__logo-mark img {
@@ -356,12 +365,14 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
     width: clamp(11.55rem, 23.1vw, 16.8rem);
     height: auto;
     max-width: 100%;
+    margin-inline: auto;
     object-fit: contain;
   }
 
-  .hero__content h1 {
+  .hero__headline h1 {
     font-size: clamp(2.75rem, 5.5vw, 4.5rem);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0;
+    text-align: left;
   }
 
   .hero__lead {
