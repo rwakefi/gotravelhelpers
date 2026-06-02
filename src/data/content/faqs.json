@@ -1,0 +1,40 @@
+{
+  "items": [
+    {
+      "question": "Who do you serve?",
+      "answer": "We serve seniors, adult children arranging travel for loved ones, travelers with medical or mobility needs, and anyone who wants professional companion support for domestic or international trips."
+    },
+    {
+      "question": "Where do you operate?",
+      "answer": "We operate worldwide. Our companions travel wherever you need to go — across the country or around the globe."
+    },
+    {
+      "question": "What does a travel companion do?",
+      "answer": "A travel companion provides hands-on assistance throughout your journey: airport navigation, baggage help, in-flight support, ground transportation coordination, lodging assistance, and ongoing communication with family."
+    },
+    {
+      "question": "Do you offer medical support?",
+      "answer": "Yes. Our founder is a registered nurse with an MBA. We can provide medically informed companion support tailored to each traveler's needs. Contact us to discuss your specific situation."
+    },
+    {
+      "question": "How do I get a quote?",
+      "answer": "Every trip is unique. Contact us by phone, email, or our inquiry form and we will provide a personalized quote based on your itinerary and level of support needed."
+    },
+    {
+      "question": "Can you help plan the entire trip?",
+      "answer": "Absolutely. We handle flights, hotels, accessibility research, and full itinerary planning in addition to companion services."
+    },
+    {
+      "question": "Do you stay with clients during their vacation?",
+      "answer": "Yes. We have expanded our services to include staying with you throughout your adventure — not just getting you there. Your Travel Helper provides hands-on assistance at your destination, on excursions, and throughout your trip."
+    },
+    {
+      "question": "How do I choose the right excursion?",
+      "answer": "Always read the cruise line or park service description of each excursion carefully. Be honest about mobility needs — there are often creative ways to enjoy the sights without high bus steps, difficult cobblestone, or terrain that is not a good fit. We can help you plan alternatives."
+    },
+    {
+      "question": "How far in advance should I book?",
+      "answer": "We recommend reaching out as early as possible, especially for complex or international itineraries. We also accommodate urgent travel when availability allows."
+    }
+  ]
+}

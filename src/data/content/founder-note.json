@@ -1,0 +1,22 @@
+{
+  "title": "Travel wisely — a note from Cyndi",
+  "intro": "Lots of TH travels lately! There are so many people who need just a little help to achieve their travel dreams. Whether you hire a Travel Helper or not, please read the cruise line or park service description of every excursion and take it to heart.",
+  "points": [
+    {
+      "text": "On recent excursions, multiple people had mobility issues that were not appropriate for the tour — frustrating and dangerous for everyone involved."
+    },
+    {
+      "text": "There are creative ways to take in the sights that may not require stepping up and down on a bus six or seven times or navigating difficult cobblestone."
+    },
+    {
+      "text": "For many travelers, simply adding walking sticks for the journey would make a meaningful difference."
+    }
+  ],
+  "closing": "Call Travel Helpers to hire your travel assistant today. While you are on your vacation, we are working.",
+  "gallery": [
+    { "src": "/images/trip-greece-assist.jpg", "alt": "Travel Helper assisting a client at a historic site" },
+    { "src": "/images/trip-waterfall-poles.jpg", "alt": "Travel Helper using trekking poles on an excursion" },
+    { "src": "/images/trip-greece-donkeys.jpg", "alt": "Navigating cobblestone paths in Greece" },
+    { "src": "/images/trip-alps.jpg", "alt": "Alpine scenery on a recent Travel Helpers trip" }
+  ]
+}

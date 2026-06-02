@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "number": "01",
+      "title": "Reach out",
+      "description": "Call, email, or submit our inquiry form. Tell us about the traveler, destination, dates, and any special needs."
+    },
+    {
+      "number": "02",
+      "title": "Personalized plan",
+      "description": "We design a companion plan covering every leg of the journey — flights, ground transport, lodging, and on-trip support."
+    },
+    {
+      "number": "03",
+      "title": "Travel with confidence",
+      "description": "Your companion meets you where you need them and stays with you through each phase of the trip."
+    },
+    {
+      "number": "04",
+      "title": "Safe arrival & follow-up",
+      "description": "We ensure a smooth arrival at your destination and keep family updated along the way. We are with you until you are settled."
+    }
+  ]
+}

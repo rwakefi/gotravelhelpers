@@ -1,0 +1,22 @@
+{
+  "items": [
+    {
+      "title": "Royal Caribbean — Eastern Caribbean",
+      "description": "Companion support on a Royal Caribbean cruise through the Eastern Caribbean — helping our client navigate ports, excursions, and every detail along the way.",
+      "image": "/images/trip-cruise-group.jpg",
+      "imageAlt": "Travel Helpers team with a client on a cruise vacation"
+    },
+    {
+      "title": "Las Vegas — 88+ year-old traveler & son",
+      "description": "A trip to Las Vegas for an 88-year-old client and his son — proof that age does not have to keep you from the experiences you have been waiting for.",
+      "image": "/images/trip-scenic-rail.jpg",
+      "imageAlt": "Travel Helpers client enjoying a scenic excursion"
+    },
+    {
+      "title": "Norwegian Cruise Line — Greece",
+      "description": "An NCL voyage through Greece and the Mediterranean — from cobblestone streets to historic mosques, with a Travel Helper by their side every step.",
+      "image": "/images/trip-greece-mosque.jpg",
+      "imageAlt": "Travel Helpers clients visiting the Blue Mosque in Istanbul"
+    }
+  ]
+}

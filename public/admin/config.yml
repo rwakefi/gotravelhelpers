@@ -1,0 +1,213 @@
+# Decap CMS — Travel Helpers
+# After deploying the OAuth worker (see docs/CMS.md), replace YOUR-OAUTH-WORKER-URL below.
+
+backend:
+  name: github
+  repo: rwakefi/gotravelhelpers
+  branch: main
+  base_url: https://YOUR-OAUTH-WORKER-URL
+  auth_endpoint: oauth
+
+local_backend: true
+
+site_url: https://gotravelhelpers.com
+display_url: https://gotravelhelpers.com
+logo_url: /images/logo.png
+
+media_folder: public/images
+public_folder: /images
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  - name: settings
+    label: Site Settings
+    files:
+      - name: general
+        label: General
+        file: src/data/content/site.json
+        fields:
+          - { label: Business name, name: name, widget: string }
+          - { label: Domain, name: domain, widget: string, hint: "e.g. gotravelhelpers.com" }
+          - { label: Motto, name: motto, widget: string }
+          - { label: Tagline, name: tagline, widget: string }
+          - { label: Description, name: description, widget: text }
+          - { label: Phone, name: phone, widget: string, hint: "Displayed as written, e.g. 479.420.5184" }
+          - { label: Email, name: email, widget: string }
+          - { label: Service area, name: serviceArea, widget: string }
+          - label: Address
+            name: address
+            widget: object
+            fields:
+              - { label: City, name: city, widget: string }
+              - { label: State, name: state, widget: string }
+              - { label: Country, name: country, widget: string }
+          - label: Social links
+            name: social
+            widget: object
+            fields:
+              - { label: Facebook URL, name: facebook, widget: string, required: false }
+          - label: Founder
+            name: founder
+            widget: object
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Credentials, name: credentials, widget: string }
+              - { label: Title, name: title, widget: string }
+          - label: Logo
+            name: logo
+            widget: object
+            fields:
+              - { label: Image, name: src, widget: image }
+              - { label: Alt text, name: alt, widget: string }
+              - { label: Width, name: width, widget: number, value_type: int }
+              - { label: Height, name: height, widget: number, value_type: int }
+
+  - name: images
+    label: Site Images
+    files:
+      - name: photos
+        label: Photos
+        file: src/data/content/images.json
+        fields:
+          - label: Homepage hero photo
+            name: hero
+            widget: object
+            fields:
+              - { label: Image, name: src, widget: image }
+              - { label: Alt text, name: alt, widget: string }
+              - { label: Width, name: width, widget: number, value_type: int }
+              - { label: Height, name: height, widget: number, value_type: int }
+          - label: About page photo
+            name: about
+            widget: object
+            fields:
+              - { label: Image, name: src, widget: image }
+              - { label: Alt text, name: alt, widget: string }
+              - { label: Width, name: width, widget: number, value_type: int }
+              - { label: Height, name: height, widget: number, value_type: int }
+          - label: Page header photos
+            name: pageHero
+            widget: object
+            fields:
+              - label: Services page
+                name: services
+                widget: object
+                fields:
+                  - { label: Image, name: src, widget: image }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: How It Works page
+                name: howItWorks
+                widget: object
+                fields:
+                  - { label: Image, name: src, widget: image }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: Contact page
+                name: contact
+                widget: object
+                fields:
+                  - { label: Image, name: src, widget: image }
+                  - { label: Alt text, name: alt, widget: string }
+              - label: About page header
+                name: about
+                widget: object
+                fields:
+                  - { label: Image, name: src, widget: image }
+                  - { label: Alt text, name: alt, widget: string }
+
+  - name: content
+    label: Page Content
+    files:
+      - name: services
+        label: Services
+        file: src/data/content/services.json
+        fields:
+          - label: Services
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - label: Icon
+                name: icon
+                widget: select
+                options: [plane, heart, home, bed, calendar, compass, map, medical]
+              - { label: Photo, name: image, widget: image }
+              - { label: Photo alt text, name: imageAlt, widget: string }
+
+      - name: audiences
+        label: Who We Help
+        file: src/data/content/audiences.json
+        fields:
+          - label: Audience cards
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Photo, name: image, widget: image }
+              - { label: Photo alt text, name: imageAlt, widget: string }
+
+      - name: steps
+        label: How It Works steps
+        file: src/data/content/steps.json
+        fields:
+          - label: Steps
+            name: items
+            widget: list
+            summary: "{{fields.number}} — {{fields.title}}"
+            fields:
+              - { label: Number, name: number, widget: string, hint: "e.g. 01" }
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+
+      - name: adventures
+        label: Recent Adventures
+        file: src/data/content/recent-adventures.json
+        fields:
+          - label: Adventures
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Photo, name: image, widget: image }
+              - { label: Photo alt text, name: imageAlt, widget: string }
+
+      - name: founder-note
+        label: Cyndi's Travel Note
+        file: src/data/content/founder-note.json
+        fields:
+          - { label: Section title, name: title, widget: string }
+          - { label: Intro paragraph, name: intro, widget: text }
+          - label: Bullet points
+            name: points
+            widget: list
+            summary: "{{fields.text}}"
+            fields:
+              - { label: Point, name: text, widget: text }
+          - { label: Closing paragraph, name: closing, widget: text }
+          - label: Photo gallery
+            name: gallery
+            widget: list
+            summary: "{{fields.alt}}"
+            fields:
+              - { label: Photo, name: src, widget: image }
+              - { label: Alt text, name: alt, widget: string }
+
+      - name: faqs
+        label: FAQs
+        file: src/data/content/faqs.json
+        fields:
+          - label: Questions
+            name: items
+            widget: list
+            summary: "{{fields.question}}"
+            fields:
+              - { label: Question, name: question, widget: string }
+              - { label: Answer, name: answer, widget: text }

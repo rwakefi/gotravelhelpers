@@ -1,0 +1,60 @@
+{
+  "items": [
+    {
+      "title": "Airport Companion",
+      "description": "Support from arrival at the airport through check-in, security, boarding, and baggage claim — so no step feels overwhelming.",
+      "icon": "plane",
+      "image": "/images/airport.jpg",
+      "imageAlt": "Elderly man waiting at an airport terminal"
+    },
+    {
+      "title": "In-Flight Companion",
+      "description": "A trusted companion by your side in the air, offering reassurance, assistance, and attentive care throughout the flight.",
+      "icon": "heart",
+      "image": "/images/flight.jpg",
+      "imageAlt": "Senior couple reviewing a boarding pass before their flight"
+    },
+    {
+      "title": "Door-to-Door Travel",
+      "description": "Complete journey support from your home to your final destination, including ground transportation coordination.",
+      "icon": "home",
+      "image": "/images/door-to-door.jpg",
+      "imageAlt": "Elderly couple walking together while traveling"
+    },
+    {
+      "title": "Lodging Support",
+      "description": "Help settling into hotels and accommodations along the way, so every stop is comfortable and stress-free.",
+      "icon": "bed",
+      "image": "/images/hotel.jpg",
+      "imageAlt": "Senior travelers settling in at their lodging"
+    },
+    {
+      "title": "Multi-Day & Full-Trip",
+      "description": "Companion support for entire vacations, relocations, or extended travel — from first departure to safe return home. We stay with you throughout your adventure, not just to get you there.",
+      "icon": "calendar",
+      "image": "/images/trip-cruise-group.jpg",
+      "imageAlt": "Travel Helpers team with a client enjoying a cruise vacation"
+    },
+    {
+      "title": "On-Adventure Assistance",
+      "description": "Hands-on support at your destination — cruise excursions, historic sites, theme parks, and daily activities. While you enjoy your vacation, your Travel Helper is working to keep you safe and comfortable.",
+      "icon": "compass",
+      "image": "/images/trip-greece-assist.jpg",
+      "imageAlt": "Travel Helper assisting a client entering a historic site"
+    },
+    {
+      "title": "Trip Planning & Logistics",
+      "description": "Flights, hotels, accessibility research, and itinerary planning tailored to your needs and comfort level.",
+      "icon": "map",
+      "image": "/images/planning.jpg",
+      "imageAlt": "Senior couple planning their trip together"
+    },
+    {
+      "title": "Medical Travel Support",
+      "description": "Experienced nursing background for travelers with medical needs — coordinated, compassionate, and professional.",
+      "icon": "medical",
+      "image": "/images/medical.jpg",
+      "imageAlt": "Elderly couple sharing a supportive, caring moment"
+    }
+  ]
+}

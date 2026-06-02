@@ -137,7 +137,7 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
         <h2>{founderNote.title}</h2>
         <p>{founderNote.intro}</p>
         <ul class="founder-note__list">
-          {founderNote.points.map((point) => <li>{point}</li>)}
+          {founderNote.points.map((point) => <li>{point.text}</li>)}
         </ul>
         <p><strong>{founderNote.closing}</strong></p>
         <p>

@@ -1,0 +1,29 @@
+{
+  "name": "Travel Helpers",
+  "domain": "gotravelhelpers.com",
+  "motto": "Don't let getting there keep you from going.",
+  "tagline": "Don't let getting there keep you from going.",
+  "description": "Travel Helpers provides services ranging from extra hands during air travel to non-critical medical assistance while traveling. We now stay with you throughout your adventure — so you can focus on the experience while we handle the rest.",
+  "phone": "479.420.5184",
+  "email": "info@gotravelhelpers.com",
+  "address": {
+    "city": "Fayetteville",
+    "state": "AR",
+    "country": "United States"
+  },
+  "serviceArea": "Based in Fayetteville, AR · Serving travelers worldwide",
+  "social": {
+    "facebook": "https://www.facebook.com/profile.php?id=100083484635385"
+  },
+  "founder": {
+    "name": "Cyndi Glidewell",
+    "credentials": "RN, MBA",
+    "title": "Founder"
+  },
+  "logo": {
+    "src": "/images/logo.png",
+    "alt": "Travel Helpers",
+    "width": 1240,
+    "height": 346
+  }
+}

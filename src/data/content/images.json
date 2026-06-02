@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "src": "/images/trip-cruise-group.jpg",
+    "alt": "Travel Helpers team with a client on a cruise vacation",
+    "width": 1200,
+    "height": 1500
+  },
+  "mission": {
+    "src": "/images/trip-greece-assist.jpg",
+    "alt": "Travel Helper assisting a client at a historic site abroad",
+    "width": 1000,
+    "height": 750
+  },
+  "about": {
+    "src": "/images/trip-cruise-group.jpg",
+    "alt": "Travel Helpers team with a client on a cruise vacation",
+    "width": 1000,
+    "height": 1250
+  },
+  "pageHero": {
+    "services": {
+      "src": "/images/airport.jpg",
+      "alt": "Elderly man waiting at an airport terminal window"
+    },
+    "howItWorks": {
+      "src": "/images/planning.jpg",
+      "alt": "Senior couple reviewing travel plans and boarding pass"
+    },
+    "contact": {
+      "src": "/images/contact.jpg",
+      "alt": "Elderly travelers at the airport"
+    },
+    "about": {
+      "src": "/images/group-travel.jpg",
+      "alt": "Senior friends traveling together"
+    }
+  }
+}

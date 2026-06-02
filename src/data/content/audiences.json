@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "title": "Seniors traveling independently",
+      "description": "Regain confidence to visit family, attend events, or explore the world on your own terms.",
+      "image": "/images/audience-seniors.jpg",
+      "imageAlt": "Commercial airplane flying through the clouds"
+    },
+    {
+      "title": "Adult children arranging care",
+      "description": "Peace of mind knowing a professional companion is with your loved one every step of the way.",
+      "image": "/images/audience-family.jpg",
+      "imageAlt": "Elderly couple traveling with support from family"
+    },
+    {
+      "title": "Medical & mobility needs",
+      "description": "Thoughtful support for appointments, treatments, recovery travel, and specialized requirements.",
+      "image": "/images/audience-medical.jpg",
+      "imageAlt": "Senior in a wheelchair receiving caregiver assistance"
+    },
+    {
+      "title": "Bucket-list adventures",
+      "description": "Make dream destinations a reality with a companion who handles the details while you enjoy the moment.",
+      "image": "/images/audience-adventure.jpg",
+      "imageAlt": "Elderly couple enjoying a bucket-list vacation"
+    }
+  ]
+}
