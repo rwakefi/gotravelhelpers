@@ -5,10 +5,9 @@ backend:
   name: github
   repo: rwakefi/gotravelhelpers
   branch: main
+  site_domain: gotravelhelpers.com
   base_url: https://gotravelhelpers-cms-oauth.gotravelhelpers.workers.dev
   auth_endpoint: oauth
-
-local_backend: true
 
 site_url: https://gotravelhelpers.com
 display_url: https://gotravelhelpers.com

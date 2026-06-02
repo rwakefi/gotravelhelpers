@@ -10,10 +10,17 @@ const corsHeaders = {
 };
 
 function authPage(token) {
-  const message = `authorization:github:success:${JSON.stringify({ token, provider: 'github' })}`;
+  const payload = JSON.stringify({ token, provider: 'github' });
+  const message = `authorization:github:success:${payload}`;
+  // postMessage target must be the admin site origin, not the worker origin
+  const siteOrigin = 'https://gotravelhelpers.com';
   return `<!doctype html><html><body><script>
-    window.opener.postMessage(${JSON.stringify(message)}, window.location.origin);
-    window.close();
+    (function () {
+      if (window.opener) {
+        window.opener.postMessage(${JSON.stringify(message)}, ${JSON.stringify(siteOrigin)});
+      }
+      window.close();
+    })();
   </script></body></html>`;
 }
 
