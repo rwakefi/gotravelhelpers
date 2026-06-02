@@ -41,7 +41,7 @@ Every push to `main` builds the site and uploads it to IONOS via SFTP (port 22).
 
 To deploy manually without pushing code, use **Actions → Deploy to IONOS → Run workflow**.
 
-**Note:** `remoteDir` in `.github/workflows/deploy.yml` is set to `/` (web root). If uploads land in the wrong place, change `remoteDir` to your IONOS web folder (e.g. `/htdocs/`).
+**Note:** `remote_path` in `.github/workflows/deploy.yml` is set to `/` (web root). If uploads land in the wrong place, change `remote_path` to your IONOS web folder (e.g. `/htdocs/`).
 
 ### Option B: Manual SFTP
 
