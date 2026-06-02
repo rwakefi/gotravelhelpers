@@ -5,7 +5,7 @@ backend:
   name: github
   repo: rwakefi/gotravelhelpers
   branch: main
-  base_url: https://YOUR-OAUTH-WORKER-URL
+  base_url: https://gotravelhelpers-cms-oauth.gotravelhelpers.workers.dev
   auth_endpoint: oauth
 
 local_backend: true
