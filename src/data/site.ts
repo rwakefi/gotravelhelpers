@@ -36,8 +36,8 @@ export const site = {
 
 export const images = {
   hero: {
-    src: '/images/hero.jpg',
-    alt: 'Senior couple with luggage ready to travel',
+    src: '/images/trip-cruise-group.jpg',
+    alt: 'Travel Helpers team with a client on a cruise vacation',
     width: 1200,
     height: 1500,
   },
