@@ -11,6 +11,7 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
       <div class="hero__cloud hero__cloud--1"></div>
       <div class="hero__cloud hero__cloud--2"></div>
       <div class="hero__cloud hero__cloud--3"></div>
+      <img class="hero__plane" src="/images/plane-silhouette.svg" alt="" width="64" height="32" />
     </div>
     <div class="container hero__grid">
       <div class="hero__content">
@@ -154,7 +155,7 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
     position: relative;
     padding: 2rem 0 4.25rem;
     overflow: hidden;
-    background: linear-gradient(180deg, #8eb5d4 0%, #b8d4e8 22%, #dceaf4 50%, #f2f7fa 78%, var(--color-bg) 100%);
+    background: linear-gradient(180deg, #d4e9f6 0%, #e3f2fa 28%, #eef7fc 55%, #f5fafc 82%, var(--color-bg) 100%);
   }
 
   .hero__sky {
@@ -170,10 +171,104 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
     inset: 0;
     background: linear-gradient(
       180deg,
-      #9ebfd6 0%,
-      #c5dced 35%,
+      #cce5f4 0%,
+      #e0f0fa 40%,
       rgba(247, 245, 242, 0) 100%
     );
+  }
+
+  .hero__plane {
+    position: absolute;
+    top: 12%;
+    left: 58%;
+    width: clamp(2.75rem, 5vw, 4rem);
+    height: auto;
+    border: none;
+    opacity: 0.7;
+    z-index: 2;
+    animation: hero-plane-fly 42s linear infinite;
+    pointer-events: none;
+  }
+
+  @keyframes hero-plane-fly {
+    0% {
+      transform: translate(55vw, 0) rotate(-6deg);
+      opacity: 0;
+    }
+    8% {
+      opacity: 0.65;
+    }
+    92% {
+      opacity: 0.65;
+    }
+    100% {
+      transform: translate(-35vw, 1.5rem) rotate(-6deg);
+      opacity: 0;
+    }
+  }
+
+  @media (min-width: 960px) {
+    .hero__plane {
+      top: 10%;
+      left: auto;
+      right: 6%;
+      animation: hero-plane-fly-desktop 38s linear infinite;
+    }
+
+    @keyframes hero-plane-fly-desktop {
+      0% {
+        transform: translate(40vw, -0.5rem) rotate(-5deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 0.72;
+      }
+      90% {
+        opacity: 0.72;
+      }
+      100% {
+        transform: translate(-28vw, 1rem) rotate(-5deg);
+        opacity: 0;
+      }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero__plane {
+      animation: none;
+      top: 8%;
+      right: 8%;
+      left: auto;
+      opacity: 0.55;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media (max-width: 639px) {
+    .hero__plane {
+      top: 6%;
+      left: auto;
+      right: 4%;
+      width: 2.5rem;
+      animation: hero-plane-fly-mobile 36s linear infinite;
+    }
+
+    @keyframes hero-plane-fly-mobile {
+      0% {
+        transform: translate(30vw, 0) rotate(-6deg);
+        opacity: 0;
+      }
+      12% {
+        opacity: 0.55;
+      }
+      88% {
+        opacity: 0.55;
+      }
+      100% {
+        transform: translate(-25vw, 0.5rem) rotate(-6deg);
+        opacity: 0;
+      }
+    }
   }
 
   .hero__clouds {

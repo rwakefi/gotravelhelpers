@@ -48,7 +48,8 @@ img {
 .header__logo img,
 .footer__logo img,
 .hero__clouds,
-.hero__cloud {
+.hero__cloud,
+.hero__plane {
   border: none;
 }
 
