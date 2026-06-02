@@ -162,9 +162,13 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
     padding: 4.25rem 0;
   }
 
+  .hero--sky + .section--home {
+    padding-top: 2.5rem;
+  }
+
   .hero--sky {
     position: relative;
-    padding: 1.5rem 0 4.25rem;
+    padding: 1.5rem 0 2.5rem;
     overflow: hidden;
     background: linear-gradient(180deg, #d4e9f6 0%, #e3f2fa 28%, #eef7fc 55%, #f5fafc 82%, var(--color-bg) 100%);
   }
@@ -344,7 +348,7 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
   @media (min-width: 960px) {
     .hero__grid {
       grid-template-columns: 1fr 1fr;
-      min-height: calc(100vh - var(--header-height));
+      align-items: center;
     }
   }
 
