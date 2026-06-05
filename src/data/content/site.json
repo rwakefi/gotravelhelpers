@@ -1,5 +1,5 @@
 {
-  "serviceArea": "Based in Fayetteville, AR · Serving travelers worldwide",
+  "serviceArea": "Based in Fort Smith/Fayetteville, AR · Serving travelers worldwide",
   "domain": "gotravelhelpers.com",
   "logo": {
     "src": "/images/logo.png",
@@ -16,8 +16,8 @@
   "tagline": "Don't let getting there keep you from going.",
   "founder": {
     "name": "Cyndi Glidewell",
-    "credentials": "RN",
-    "title": "Founder"
+    "credentials": "BSN, BS, Author, \"The Red Hat Society Travel Guide\",  Certified Travel Advisor",
+    "title": "Founder, Author "
   },
   "address": {
     "city": "Fayetteville",
@@ -25,5 +25,5 @@
     "country": "United States"
   },
   "email": "info@gotravelhelpers.com",
-  "description": "Travel Helpers provides services ranging from extra hands during air travel to non-critical medical assistance while traveling. We now stay with you throughout your adventure — so you can focus on the experience while we handle the rest."
+  "description": "Travel Helpers provides services ranging from extra hands during air travel to non-critical medical assistance while traveling. We now stay with you throughout your adventure — so you can focus on the experience while we handle the rest.\n\nTravel Helpers founder, Cyndi Glidewell, is affiliated with Fora Travel.  "
 }
