@@ -92,3 +92,22 @@ src/
 public/              # Static assets
 dist/                # Built site (after npm run build)
 ```
+
+## Academy & Training Curriculum (Future Agents Reference)
+
+The site features a dedicated `/become-a-travel-helper` route for Cyndi Glidewell's Travel Companion Masterclass.
+
+**Crucial Business/Topic Distinctions:**
+- This training is for a **Travel Companion / Patient Escort business** (physically accompanying travelers who need assistance during transit, such as elderly, post-surgery, disabled, or anxious passengers).
+- It is **NOT** a medical tourism facilitator course (i.e., arranging treatment abroad, dental tourism, or hospital partnerships).
+- All pricing and numeric references are strictly omitted from public copy.
+
+**Curriculum Outline:**
+1. **Identifying Travelers in Need**: Finding elderly, post-surgery, disabled, or anxious clients.
+2. **Scope of Practice**: The exact boundaries and legal limits of what a travel companion can and cannot do.
+3. **Liability, Insurance, & Waivers**: Protecting the companion business.
+4. **Custom Companion Pricing**: Structuring trip-based pricing (no specific numbers).
+5. **Client Intake & Fit Assessment**: Evaluating customer needs and medical clearances.
+6. **Airline Coordination**: Booking companion fares, wheelchair setups, and medical clearances.
+7. **Emergency Protocols**: Action steps if a health issue or travel delay occurs mid-transit.
+8. **Business Marketing**: Networking with families, discharge planners, hospitals, and senior facilities.
