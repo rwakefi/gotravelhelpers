@@ -131,6 +131,13 @@ const formSent = Astro.url.searchParams.get('sent') === '1';
         </div>
 
         <button type="submit" class="btn btn--primary">Request Class Details</button>
+
+        <div class="fora-referral-block">
+          <p class="fora-referral-text">Become a Fora Travel Advisor</p>
+          <a href="https://referral.foratravel.com/ABHEZT" target="_blank" rel="noopener noreferrer" class="fora-referral-link">
+            <img src="/images/fora-logo.png" alt="Fora Travel" class="fora-referral-logo" />
+          </a>
+        </div>
       </form>
     </div>
   </section>
@@ -259,5 +266,42 @@ const formSent = Astro.url.searchParams.get('sent') === '1';
     border-radius: 0.375rem;
     font-size: 0.9375rem;
     line-height: 1.5;
+  }
+
+  .fora-referral-block {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-border-light);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .fora-referral-text {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-text-muted);
+    margin: 0;
+  }
+
+  .fora-referral-link {
+    display: inline-flex;
+    align-items: center;
+    transition: opacity 0.2s;
+  }
+
+  .fora-referral-link:hover {
+    opacity: 0.75;
+  }
+
+  .fora-referral-logo {
+    height: 1.75rem;
+    width: auto;
+    object-fit: contain;
+    border: none;
   }
 </style>
