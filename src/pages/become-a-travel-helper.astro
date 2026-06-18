@@ -72,65 +72,67 @@ const formSent = Astro.url.searchParams.get('sent') === '1';
         </div>
       </div>
 
-      <form class="academy-form card" action={formAction} method="POST">
-        <input type="hidden" name="_subject" value="New class inquiry — Become a Travel Helper" />
-        <input type="hidden" name="_next" value={formReturnUrl} />
-        <input type="hidden" name="_captcha" value="true" />
-        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+      <div class="academy-sidebar">
+        <form class="academy-form card" action={formAction} method="POST">
+          <input type="hidden" name="_subject" value="New class inquiry — Become a Travel Helper" />
+          <input type="hidden" name="_next" value={formReturnUrl} />
+          <input type="hidden" name="_captcha" value="true" />
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
-        <h2>Inquire About the Class</h2>
-        <p class="form-sub">Fill out the form below to receive syllabus details, tuition information, and upcoming course schedules.</p>
+          <h2>Inquire About the Class</h2>
+          <p class="form-sub">Fill out the form below to receive syllabus details, tuition information, and upcoming course schedules.</p>
 
-        {
-          formSent && (
-            <p class="form-success" role="status">
-              Thank you for your interest! Your message has been sent. We'll be in touch with class schedules and syllabus details soon.
-            </p>
-          )
-        }
+          {
+            formSent && (
+              <p class="form-success" role="status">
+                Thank you for your interest! Your message has been sent. We'll be in touch with class schedules and syllabus details soon.
+              </p>
+            )
+          }
 
-        <div class="form-group">
-          <label for="name">Full name</label>
-          <input type="text" id="name" name="name" required autocomplete="name" />
-        </div>
+          <div class="form-group">
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" />
+          </div>
 
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required autocomplete="email" />
-        </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" />
+          </div>
 
-        <div class="form-group">
-          <label for="phone">Phone number</label>
-          <input type="tel" id="phone" name="phone" autocomplete="tel" />
-        </div>
+          <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input type="tel" id="phone" name="phone" autocomplete="tel" />
+          </div>
 
-        <div class="form-group">
-          <label for="background">Your current background</label>
-          <select id="background" name="background">
-            <option value="">Select one</option>
-            <option value="travel">Travel Industry (Agent, Advisor, Aviation)</option>
-            <option value="healthcare">Healthcare (RN, LPN, CNA, Caregiver)</option>
-            <option value="hospitality">Hospitality / Customer Service</option>
-            <option value="other">Other / Career Changer</option>
-          </select>
-        </div>
+          <div class="form-group">
+            <label for="background">Your current background</label>
+            <select id="background" name="background">
+              <option value="">Select one</option>
+              <option value="travel">Travel Industry (Agent, Advisor, Aviation)</option>
+              <option value="healthcare">Healthcare (RN, LPN, CNA, Caregiver)</option>
+              <option value="hospitality">Hospitality / Customer Service</option>
+              <option value="other">Other / Career Changer</option>
+            </select>
+          </div>
 
-        <div class="form-group">
-          <label for="course-format">Preferred course format</label>
-          <select id="course-format" name="course-format">
-            <option value="">Select one</option>
-            <option value="online">Online Course</option>
-            <option value="in-person">In-Person Masterclass Workshop</option>
-            <option value="both">Both / Undecided</option>
-          </select>
-        </div>
+          <div class="form-group">
+            <label for="course-format">Preferred course format</label>
+            <select id="course-format" name="course-format">
+              <option value="">Select one</option>
+              <option value="online">Online Course</option>
+              <option value="in-person">In-Person Masterclass Workshop</option>
+              <option value="both">Both / Undecided</option>
+            </select>
+          </div>
 
-        <div class="form-group">
-          <label for="message">Why are you interested in becoming a Travel Helper?</label>
-          <textarea id="message" name="message" placeholder="Tell us briefly about your interest or goals..."></textarea>
-        </div>
+          <div class="form-group">
+            <label for="message">Why are you interested in becoming a Travel Helper?</label>
+            <textarea id="message" name="message" placeholder="Tell us briefly about your interest or goals..."></textarea>
+          </div>
 
-        <button type="submit" class="btn btn--primary">Request Class Details</button>
+          <button type="submit" class="btn btn--primary">Request Class Details</button>
+        </form>
 
         <div class="fora-referral-block">
           <p class="fora-referral-text">Become a Fora Travel Advisor</p>
@@ -138,7 +140,7 @@ const formSent = Astro.url.searchParams.get('sent') === '1';
             <img src="/images/fora-logo.png" alt="Fora Travel" class="fora-referral-logo" />
           </a>
         </div>
-      </form>
+      </div>
     </div>
   </section>
 </BaseLayout>
@@ -268,10 +270,14 @@ const formSent = Astro.url.searchParams.get('sent') === '1';
     line-height: 1.5;
   }
 
+  .academy-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
   .fora-referral-block {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--color-border-light);
+    margin-top: 1rem;
     text-align: center;
     display: flex;
     flex-direction: column;
