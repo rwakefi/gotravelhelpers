@@ -110,10 +110,10 @@ const hasMultiple = banner.messages && banner.messages.length > 1;
 <style>
   .top-banner {
     position: relative;
-    z-index: 101; /* Higher than sticky header */
-    background: linear-gradient(135deg, #2a2420 0%, #3d342e 100%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    color: #fff;
+    z-index: 101;
+    background: #0d0b09;
+    border-bottom: 1px solid rgba(212, 184, 150, 0.2);
+    color: rgba(250, 248, 245, 0.9);
     overflow: hidden;
     font-size: 0.8125rem;
     font-weight: 400;
@@ -197,15 +197,16 @@ const hasMultiple = banner.messages && banner.messages.length > 1;
 
   .top-banner__badge {
     display: inline-block;
-    font-size: 0.6875rem;
-    font-weight: 600;
+    font-size: 0.6rem;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    background: var(--color-accent);
-    color: #fff;
-    padding: 0.15rem 0.45rem;
-    border-radius: 3px;
-    line-height: 1;
+    letter-spacing: 0.15em;
+    background: transparent;
+    color: #d4b896;
+    border: 1px solid rgba(212, 184, 150, 0.5);
+    padding: 0.15rem 0.5rem;
+    border-radius: 2px;
+    line-height: 1.4;
   }
 
   .top-banner__content {
@@ -218,19 +219,19 @@ const hasMultiple = banner.messages && banner.messages.length > 1;
     align-items: center;
     gap: 0.25rem;
     font-weight: 600;
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    color: rgba(255, 255, 255, 0.85);
+    letter-spacing: 0.1em;
+    color: #d4b896;
     white-space: nowrap;
-    border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+    border-bottom: 1px solid rgba(212, 184, 150, 0.4);
     padding-bottom: 1px;
     transition: color 0.2s, border-color 0.2s;
   }
 
   .top-banner__link:hover .top-banner__cta {
-    color: #fff;
-    border-color: #fff;
+    color: #e8d0b8;
+    border-color: #e8d0b8;
   }
 
   .top-banner__arrow {

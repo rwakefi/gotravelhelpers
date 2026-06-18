@@ -29,7 +29,11 @@ import { site, services, audiences, recentAdventures, founderNote, images, stats
           <h1>{site.motto}</h1>
         </div>
         <p class="hero__lead">
-          {site.description}
+          Travel Helpers provides professional travel coordination, VIP executive concierge services, and assisted companion support. 
+          <strong>Founded by Cyndi Glidewell, a former business executive who has flown over 3 million miles</strong>, we know firsthand the trials, tribulations, and joys of the journey.
+        </p>
+        <p class="hero__sublead">
+          With hands-on experience ranging from working as an American Airlines gate and ticket counter agent to serving as a Registered Nurse, Cyndi came out of retirement to build a travel service that ensures every detail is seamless.
         </p>
         <div class="hero__actions">
           <a href="/contact" class="btn btn--primary">Get an Estimate</a>
@@ -439,9 +443,18 @@ import { site, services, audiences, recentAdventures, founderNote, images, stats
 
   .hero__lead {
     font-size: 1.125rem;
+    color: var(--color-text);
+    max-width: 36rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
+  }
+
+  .hero__sublead {
+    font-size: 0.95rem;
     color: var(--color-text-muted);
-    max-width: 34rem;
+    max-width: 36rem;
     margin-bottom: 2rem;
+    line-height: 1.6;
   }
 
   .hero__actions {
@@ -484,7 +497,8 @@ import { site, services, audiences, recentAdventures, founderNote, images, stats
       text-align: center;
     }
 
-    .hero__lead {
+    .hero__lead,
+    .hero__sublead {
       margin-left: auto;
       margin-right: auto;
     }

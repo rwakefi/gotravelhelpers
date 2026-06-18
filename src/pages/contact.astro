@@ -4,7 +4,7 @@ import PageHero from '../components/PageHero.astro';
 import { site, images } from '../data/site';
 
 const formAction = `https://formsubmit.co/${encodeURIComponent(site.email)}`;
-const formReturnUrl = `https://${site.domain}/contact/?sent=1`;
+const formReturnUrl = new URL('/contact/?sent=1', Astro.url).href;
 const formSent = Astro.url.searchParams.get('sent') === '1';
 ---
 

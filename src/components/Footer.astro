@@ -57,15 +57,21 @@ import { site, nav } from '../data/site';
 
   <div class="container footer__bottom">
     <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
-    <p class="footer__fora">Powered by <a href="https://www.foratravel.com" target="_blank" rel="noopener noreferrer">Fora Travel</a></p>
+    <div class="footer__fora">
+      <span>Powered by</span>
+      <a href="https://www.foratravel.com" target="_blank" rel="noopener noreferrer" class="fora-logo-link">
+        <span class="sr-only">Fora Travel</span>
+        <img src="/images/fora-logo.png" alt="Fora Travel" class="fora-logo-img" />
+      </a>
+    </div>
   </div>
 </footer>
 
 <style>
   .footer {
-    background: var(--color-text);
-    color: rgba(247, 245, 242, 0.85);
-    padding: 4rem 0 2rem;
+    background: #100e0c;
+    color: rgba(250, 248, 245, 0.8);
+    padding: 5rem 0 2.5rem;
   }
 
   .footer__grid {
@@ -117,12 +123,14 @@ import { site, nav } from '../data/site';
 
   .footer__heading {
     font-family: var(--font-sans);
-    font-size: 0.75rem;
+    font-size: 0.6875rem;
     font-weight: 600;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: #fff;
-    margin-bottom: 1rem;
+    color: #d4a843;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid rgba(212, 168, 67, 0.2);
   }
 
   .footer__links {
@@ -152,19 +160,13 @@ import { site, nav } from '../data/site';
   }
 
   .footer__bottom {
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding-top: 2.5rem;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  @media (min-width: 768px) {
-    .footer__bottom {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-    }
+    align-items: center;
+    justify-content: center;
+    gap: 1.25rem;
+    text-align: center;
   }
 
   .footer__bottom p {
@@ -173,14 +175,32 @@ import { site, nav } from '../data/site';
     margin: 0;
   }
 
-  .footer__fora a {
+  .footer__fora {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    font-size: 0.95rem;
     color: rgba(247, 245, 242, 0.65);
-    text-decoration: none;
-    transition: color 0.2s;
+    font-family: var(--font-sans);
+    letter-spacing: 0.02em;
   }
 
-  .footer__fora a:hover {
-    color: #fff;
-    text-decoration: underline;
+  .fora-logo-link {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .fora-logo-img {
+    height: 1.6rem;
+    width: auto;
+    object-fit: contain;
+    /* Invert black logo to white for dark footer bg */
+    filter: brightness(0) invert(1);
+    opacity: 0.75;
+    transition: opacity 0.2s;
+  }
+
+  .fora-logo-link:hover .fora-logo-img {
+    opacity: 1;
   }
 </style>

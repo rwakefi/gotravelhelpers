@@ -1,0 +1,247 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { site, images } from '../data/site';
+
+const formAction = `https://formsubmit.co/${encodeURIComponent(site.email)}`;
+const formReturnUrl = new URL('/become-a-travel-helper/?sent=1', Astro.url).href;
+const formSent = Astro.url.searchParams.get('sent') === '1';
+---
+
+<BaseLayout title="Become a Travel Helper" description="Learn the skills to become a travel companion and assist others in their journeys. Inquire about the training classes taught by Cyndi Glidewell.">
+  <PageHero
+    label="Academy & Training"
+    title="Become a Travel Helper"
+    description="Learn the art of travel coordination, journey companionship, and compassionate care from Cyndi Glidewell, a former business executive and RN."
+    image="/images/planning.jpg"
+  />
+
+  <section class="section">
+    <div class="container academy-grid">
+      <div class="academy-info prose">
+        <h2>Travel Helper Masterclass</h2>
+        <p class="academy-lead">
+          Do you love travel and helping others? There is a growing demand for skilled, professional companions who can guide seniors, families, and individuals with mobility or medical needs through today’s complex travel landscapes.
+        </p>
+        <p>
+          Designed and taught by Travel Helpers founder <strong>Cyndi Glidewell</strong> (former business executive with over 3 million miles flown, Registered Nurse, and author), this class equips you with everything you need to know to launch your career or business as a dedicated travel companion.
+        </p>
+
+        <h3>What You'll Learn</h3>
+        <ul class="academy-curriculum">
+          <li>
+            <strong>Comprehensive Travel Coordination</strong>
+            <span>Master flight bookings, hotel reservations, ground transit arrangements, and seamless multi-destination itineraries to make travel completely stress-free for others.</span>
+          </li>
+          <li>
+            <strong>Assisted Companion Logistics</strong>
+            <span>Learn how to navigate airport security, boarding processes, and excursions with seniors, families, and travelers with mobility challenges while ensuring safety and dignity.</span>
+          </li>
+          <li>
+            <strong>Health & Safety Coordination</strong>
+            <span>Gain essential knowledge on physical assessments, emergency travel protocols, medical documentation, and transit care inspired by Cyndi’s clinical nursing experience.</span>
+          </li>
+          <li>
+            <strong>Building Your Independent Companion Business</strong>
+            <span>Discover the business operations behind travel companion services, including insurance, pricing packages, client contracts, and global networking.</span>
+          </li>
+        </ul>
+
+        <div class="academy-instructor card">
+          <div class="instructor-badge">Instructor</div>
+          <h3>Cyndi Glidewell, BSN</h3>
+          <p>
+            With over 3 million miles flown as a business executive, a clinical nursing background, and years of experience building Travel Helpers into a global companion network, Cyndi brings unmatched expertise and real-world wisdom to the classroom.
+          </p>
+        </div>
+      </div>
+
+      <form class="academy-form card" action={formAction} method="POST">
+        <input type="hidden" name="_subject" value="New class inquiry — Become a Travel Helper" />
+        <input type="hidden" name="_next" value={formReturnUrl} />
+        <input type="hidden" name="_captcha" value="true" />
+        <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
+
+        <h2>Inquire About the Class</h2>
+        <p class="form-sub">Fill out the form below to receive syllabus details, tuition information, and upcoming course schedules.</p>
+
+        {
+          formSent && (
+            <p class="form-success" role="status">
+              Thank you for your interest! Your message has been sent. We'll be in touch with class schedules and syllabus details soon.
+            </p>
+          )
+        }
+
+        <div class="form-group">
+          <label for="name">Full name</label>
+          <input type="text" id="name" name="name" required autocomplete="name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required autocomplete="email" />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone number</label>
+          <input type="tel" id="phone" name="phone" autocomplete="tel" />
+        </div>
+
+        <div class="form-group">
+          <label for="background">Your current background</label>
+          <select id="background" name="background">
+            <option value="">Select one</option>
+            <option value="travel">Travel Industry (Agent, Advisor, Aviation)</option>
+            <option value="healthcare">Healthcare (RN, LPN, CNA, Caregiver)</option>
+            <option value="hospitality">Hospitality / Customer Service</option>
+            <option value="other">Other / Career Changer</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="course-format">Preferred course format</label>
+          <select id="course-format" name="course-format">
+            <option value="">Select one</option>
+            <option value="online">Online Course</option>
+            <option value="in-person">In-Person Masterclass Workshop</option>
+            <option value="both">Both / Undecided</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Why are you interested in becoming a Travel Helper?</label>
+          <textarea id="message" name="message" placeholder="Tell us briefly about your interest or goals..."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--primary">Request Class Details</button>
+      </form>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .academy-grid {
+    display: grid;
+    gap: 3.5rem;
+    align-items: start;
+  }
+
+  @media (min-width: 960px) {
+    .academy-grid {
+      grid-template-columns: 1.2fr 1fr;
+    }
+  }
+
+  .academy-info h2 {
+    font-size: 2.25rem;
+    margin-bottom: 1.25rem;
+    font-family: var(--font-serif);
+  }
+
+  .academy-lead {
+    font-size: 1.125rem;
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  .academy-info h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-serif);
+  }
+
+  .academy-curriculum {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 2.5rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+  }
+
+  .academy-curriculum li {
+    position: relative;
+    padding-left: 1.75rem;
+  }
+
+  .academy-curriculum li::before {
+    content: "✦";
+    position: absolute;
+    left: 0;
+    top: 0.15rem;
+    color: var(--color-accent);
+    font-size: 1.125rem;
+  }
+
+  .academy-curriculum strong {
+    display: block;
+    font-size: 1.05rem;
+    color: var(--color-text);
+    margin-bottom: 0.25rem;
+  }
+
+  .academy-curriculum span {
+    display: block;
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .academy-instructor {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    background: var(--color-accent-light);
+    border: 1px solid rgba(92, 45, 94, 0.15);
+  }
+
+  .instructor-badge {
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: var(--color-accent);
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    margin-bottom: 0.75rem;
+  }
+
+  .academy-instructor h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.25rem;
+    color: var(--color-accent);
+  }
+
+  .academy-instructor p {
+    margin: 0;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  .academy-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .form-sub {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+  }
+
+  .form-success {
+    padding: 1rem 1.125rem;
+    margin-bottom: 1.5rem;
+    background: rgba(92, 45, 94, 0.08);
+    border: 1px solid rgba(92, 45, 94, 0.2);
+    color: var(--color-text);
+    border-radius: 0.375rem;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+</style>
