@@ -65,9 +65,7 @@ img {
   border: none;
 }
 
-.page-home .header {
-  background: transparent;
-}
+/* Homepage header matches other pages */
 
 .page-home main > .hero--sky {
   margin-top: calc(-1 * var(--header-height));
