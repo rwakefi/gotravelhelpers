@@ -2,7 +2,11 @@
   "items": [
     {
       "question": "Who do you serve?",
-      "answer": "We serve seniors, adult children arranging travel for loved ones, travelers with medical or mobility needs, and anyone who wants professional companion support for domestic or international trips."
+      "answer": "We serve seniors, travelers with medical or mobility needs, busy executives, high-profile professionals, and anyone seeking professional travel companionship, high-discretion logistics coordination, or VIP concierge support."
+    },
+    {
+      "question": "What is included in your Executive Travel Concierge service?",
+      "answer": "Our Executive Travel service provides high-discretion logistics coordination, VIP airport lounge transit, real-time schedule adaptations, chauffeured ground transport coordination, and bespoke luxury vacation planning for busy professionals and their families."
     },
     {
       "question": "Where do you operate?",
@@ -17,8 +21,8 @@
       "answer": "Our founder is a registered nurse with a background in rehabilitation medicine and emergency medicine. Due to state and country licensing variations, we do not function as RNs while traveling.  We do provide medically informed companion support tailored to each traveler's needs. Contact us to discuss your specific situation."
     },
     {
-      "question": "How do I get a quote?",
-      "answer": "Every trip is unique. Contact us by phone, email, or our inquiry form and we will provide a personalized quote based on your itinerary and level of support needed."
+      "question": "How do I get an estimate?",
+      "answer": "Every trip is unique. Contact us by phone, email, or our inquiry form and we will provide a personalized estimate based on your itinerary and level of support needed."
     },
     {
       "question": "Can you help plan the entire trip?",

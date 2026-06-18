@@ -6,7 +6,7 @@ import { site, services, images } from '../data/site';
 const servicesSchema = {
   '@context': 'https://schema.org',
   '@type': 'OfferCatalog',
-  name: 'Travel companion services',
+  name: 'Assisted Travel Companion Services',
   provider: {
     '@type': 'TravelAgency',
     name: site.name,
@@ -24,13 +24,13 @@ const servicesSchema = {
 ---
 
 <BaseLayout
-  title="Services"
+  title="Assisted Travel"
   description="Full-service travel companion support — airport, in-flight, door-to-door, lodging, planning, and medical travel assistance worldwide."
   schema={servicesSchema}
 >
   <PageHero
     label="What we offer"
-    title="Companion services for every leg of the journey"
+    title="Assisted travel companion services"
     description="From the moment you leave home through every day of your adventure, Travel Helpers provides comprehensive companion support tailored to your needs."
     image={images.pageHero.services}
   />
@@ -56,9 +56,9 @@ const servicesSchema = {
   <section class="section section--alt">
     <div class="container centered-cta">
       <h2>Every trip is unique</h2>
-      <p>Contact us to discuss your itinerary and receive a personalized quote.</p>
+      <p>Contact us to discuss your itinerary and receive a personalized estimate.</p>
       <div class="cta-actions">
-        <a href="/contact" class="btn btn--primary">Get a Quote</a>
+        <a href="/contact" class="btn btn--primary">Get an Estimate</a>
         <a href={site.phoneHref} class="btn btn--secondary">{site.phone}</a>
       </div>
     </div>

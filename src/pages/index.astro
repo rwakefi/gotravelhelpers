@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { site, services, audiences, recentAdventures, founderNote, images } from '../data/site';
+import { site, services, audiences, recentAdventures, founderNote, images, stats, testimonials } from '../data/site';
 ---
 
 <BaseLayout title={site.name}>
@@ -32,7 +32,7 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
           {site.description}
         </p>
         <div class="hero__actions">
-          <a href="/contact" class="btn btn--primary">Get a Quote</a>
+          <a href="/contact" class="btn btn--primary">Get an Estimate</a>
           <a href="/how-it-works" class="btn btn--secondary hero__btn-secondary">How It Works</a>
         </div>
         <a href={site.phoneHref} class="hero__phone">{site.phone}</a>
@@ -61,7 +61,14 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
           audiences.map((item) => (
             <article class="audience-card">
               <div class="audience-card__image">
-                <img src={item.image} alt={item.imageAlt} width={600} height={400} loading="lazy" />
+                <img
+                  src={item.image}
+                  alt={item.imageAlt}
+                  width={600}
+                  height={400}
+                  loading="lazy"
+                  style={item.image.includes('zurich') ? 'object-position: center 18%;' : ''}
+                />
               </div>
               <div class="audience-card__body">
                 <h3>{item.title}</h3>
@@ -77,19 +84,30 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
   <section class="section section--home section--alt">
     <div class="container">
       <p class="section-label">Our services</p>
-      <h2 class="section-title">Everything you need, door to door</h2>
-      <div class="services-grid">
-        {
-          services.slice(0, 6).map((service) => (
-            <article class="card">
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
-            </article>
-          ))
-        }
-      </div>
-      <div class="section-cta">
-        <a href="/services" class="btn btn--primary">View All Services</a>
+      <h2 class="section-title">Tailored travel support for every journey</h2>
+      
+      <div class="grid-2 services-pillars">
+        <div class="services-pillar-card card">
+          <h3>Executive & Luxury Concierge</h3>
+          <p>High-discretion travel coordination and VIP concierge services for busy professionals and luxury travelers. Seamless scheduling, lounges, and luxury vacations.</p>
+          <ul class="services-pillar-list">
+            <li>VIP Fast-Track & Airport Lounge Access</li>
+            <li>Real-Time Itinerary & Transit Coordination</li>
+            <li>Bespoke Leisure & Wellness Curation</li>
+            <li>Strict Client Discretion & Ground Liaison</li>
+          </ul>
+        </div>
+        
+        <div class="services-pillar-card card">
+          <h3>Assisted Travel Services</h3>
+          <p>Comprehensive companion support for seniors, families, and travelers with medical or mobility needs. We handle every detail from your door to your destination.</p>
+          <ul class="services-pillar-list">
+            <li>Airport & In-Flight Companionship</li>
+            <li>Door-to-Door Journey Support</li>
+            <li>Medical Travel Coordination (RN-Led)</li>
+            <li>Lodging & Daily Adventure Assistance</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
@@ -98,11 +116,61 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
     <div class="container cta-banner__inner">
       <div>
         <h2>Ready to plan your trip?</h2>
-        <p>Contact us for a personalized quote. No obligation — just a conversation about how we can help.</p>
+        <p>Contact us for a personalized estimate. No obligation — just a conversation about how we can help.</p>
       </div>
       <div class="cta-banner__actions">
-        <a href="/contact" class="btn btn--light">Get a Quote</a>
+        <a href="/contact" class="btn btn--light">Get an Estimate</a>
         <a href={site.phoneHref} class="btn btn--secondary cta-banner__phone">{site.phone}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--home trust-bar">
+    <div class="container">
+      <div class="trust-bar__grid">
+        <div class="trust-bar__item">
+          <span class="trust-bar__value">RN-Led</span>
+          <span class="trust-bar__label">Certified Registered Nurse founder</span>
+        </div>
+        <div class="trust-bar__divider"></div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__value">BSN + MBA</span>
+          <span class="trust-bar__label">Clinical & business expertise</span>
+        </div>
+        <div class="trust-bar__divider"></div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__value">Worldwide</span>
+          <span class="trust-bar__label">Companion coverage — any destination</span>
+        </div>
+        <div class="trust-bar__divider"></div>
+        <div class="trust-bar__item">
+          <span class="trust-bar__value">Fora Travel</span>
+          <span class="trust-bar__label">Affiliated with a global advisor network</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--home section--alt testimonials-section">
+    <div class="container">
+      <p class="section-label">Client stories</p>
+      <h2 class="section-title">What our travelers say</h2>
+      <p class="section-intro">
+        Real experiences from real clients — both executive travelers and families who trusted us with their most meaningful journeys.
+      </p>
+      <div class="testimonials-grid">
+        {
+          testimonials.map((item) => (
+            <blockquote class="testimonial-card">
+              <div class="testimonial-card__stars" aria-label="5 stars">★★★★★</div>
+              <p class="testimonial-card__quote">&ldquo;{item.quote}&rdquo;</p>
+              <footer class="testimonial-card__footer">
+                <span class="testimonial-card__author">{item.author}</span>
+                <span class="testimonial-card__location">{item.location}</span>
+              </footer>
+            </blockquote>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -647,5 +715,205 @@ import { site, services, audiences, recentAdventures, founderNote, images } from
   .cta-banner__phone:hover {
     border-color: #fff;
     background: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Services Pillars Layout */
+  .services-pillars {
+    margin-top: 2.5rem;
+  }
+
+  .services-pillar-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .services-pillar-badge {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: var(--color-accent);
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+  }
+
+  .services-pillar-badge--executive {
+    background: #2a2420;
+  }
+
+  .services-pillar-card h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    font-family: var(--font-serif);
+  }
+
+  .services-pillar-card p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+  }
+
+  .services-pillar-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
+    width: 100%;
+  }
+
+  .services-pillar-list li {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .services-pillar-list li::before {
+    content: "✓";
+    color: var(--color-accent);
+    font-weight: bold;
+  }
+
+  .services-pillar-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  /* ── Trust / Credentials Bar ── */
+  .trust-bar {
+    padding-top: 0;
+    padding-bottom: 0;
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .trust-bar__grid {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .trust-bar__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.75rem 2.5rem;
+    flex: 1 1 11rem;
+  }
+
+  .trust-bar__divider {
+    width: 1px;
+    height: 3rem;
+    background: var(--color-border);
+    flex-shrink: 0;
+    display: none;
+  }
+
+  @media (min-width: 640px) {
+    .trust-bar__divider {
+      display: block;
+    }
+  }
+
+  .trust-bar__value {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+  }
+
+  .trust-bar__label {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    line-height: 1.4;
+  }
+
+  /* ── Testimonials ── */
+  .testimonials-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .testimonials-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .testimonial-card {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    box-shadow: 0 2px 12px rgba(20, 20, 20, 0.05);
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+
+  .testimonial-card:hover {
+    box-shadow: 0 6px 24px rgba(20, 20, 20, 0.1);
+    transform: translateY(-2px);
+  }
+
+  .testimonial-card__stars {
+    color: #c8a96e;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+  }
+
+  .testimonial-card__quote {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-text);
+    font-style: italic;
+    flex-grow: 1;
+    margin: 0;
+  }
+
+  .testimonial-card__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .testimonial-card__author {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--color-text);
+  }
+
+  .testimonial-card__location {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
   }
 </style>

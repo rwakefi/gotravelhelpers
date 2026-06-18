@@ -8,11 +8,11 @@ const formReturnUrl = `https://${site.domain}/contact/?sent=1`;
 const formSent = Astro.url.searchParams.get('sent') === '1';
 ---
 
-<BaseLayout title="Contact" description={`Contact Travel Helpers for a personalized travel companion quote. Call ${site.phone} or email ${site.email}.`}>
+<BaseLayout title="Contact" description={`Contact Travel Helpers for a personalized travel companion estimate. Call ${site.phone} or email ${site.email}.`}>
   <PageHero
     label="Get in touch"
     title="Let's plan your journey"
-    description="Tell us about your trip and we'll provide a personalized quote. No obligation — just a conversation about how we can help."
+    description="Tell us about your trip and we'll provide a personalized estimate. No obligation — just a conversation about how we can help."
     image={images.pageHero.contact}
   />
 
@@ -44,12 +44,12 @@ const formSent = Astro.url.searchParams.get('sent') === '1';
       </div>
 
       <form class="contact-form card" action={formAction} method="POST">
-        <input type="hidden" name="_subject" value="New quote request — Travel Helpers website" />
+        <input type="hidden" name="_subject" value="New estimate request — Travel Helpers website" />
         <input type="hidden" name="_next" value={formReturnUrl} />
         <input type="hidden" name="_captcha" value="true" />
         <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
 
-        <h2>Request a quote</h2>
+        <h2>Request an estimate</h2>
 
         {
           formSent && (

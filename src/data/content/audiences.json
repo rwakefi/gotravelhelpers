@@ -1,6 +1,12 @@
 {
   "items": [
     {
+      "title": "Executives & Business Travelers",
+      "description": "Premium travel coordination, VIP lounge transit, and luxury itinerary management to keep busy professionals productive and stress-free.",
+      "image": "/images/trip-zurich.jpg",
+      "imageAlt": "Executive walking in a city center"
+    },
+    {
       "title": "Seniors traveling independently",
       "description": "Regain confidence to visit family, attend events, or explore the world on your own terms.",
       "image": "/images/audience-seniors.jpg",

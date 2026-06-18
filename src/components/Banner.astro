@@ -1,0 +1,297 @@
+---
+import { banner } from '../data/site';
+
+const hasMultiple = banner.messages && banner.messages.length > 1;
+---
+
+{banner.enabled && banner.messages && banner.messages.length > 0 && (
+  <aside class="top-banner" id="top-banner" data-speed={banner.speed} style="display: none;" aria-label="Announcement Banner">
+    <div class="container top-banner__container">
+      <div class="top-banner__slider">
+        {banner.messages.map((msg, index) => (
+          <div class={`top-banner__slide ${index === 0 ? 'is-active' : ''}`} data-index={index}>
+            {msg.link ? (
+              <a href={msg.link} class="top-banner__link">
+                <span class="top-banner__text-wrap">
+                  <span class="top-banner__badge">Update</span>
+                  <span class="top-banner__content">{msg.text}</span>
+                </span>
+                <span class="top-banner__cta">
+                  <span>Learn more</span>
+                  <svg class="top-banner__arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </span>
+              </a>
+            ) : (
+              <span class="top-banner__text-wrap">
+                <span class="top-banner__badge">Update</span>
+                <span class="top-banner__content">{msg.text}</span>
+              </span>
+            )}
+          </div>
+        ))}
+      </div>
+      <button class="top-banner__close" id="top-banner-close" aria-label="Dismiss banner">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+  </aside>
+)}
+
+<script is:inline>
+  (function() {
+    var banner = document.getElementById('top-banner');
+    if (banner) {
+      if (localStorage.getItem('top-banner-dismissed') === 'true') {
+        banner.style.display = 'none';
+      } else {
+        banner.style.display = 'block';
+        // Force reflow and add class to trigger visual entry transition
+        setTimeout(function() {
+          banner.classList.add('is-visible');
+        }, 10);
+      }
+    }
+  })();
+</script>
+
+<script>
+  const banner = document.getElementById('top-banner');
+  if (banner && localStorage.getItem('top-banner-dismissed') !== 'true') {
+    const slides = banner.querySelectorAll('.top-banner__slide');
+    const closeBtn = document.getElementById('top-banner-close');
+
+    // Smooth dismissal with slide-up micro-animation
+    closeBtn?.addEventListener('click', () => {
+      banner.classList.remove('is-visible');
+      banner.classList.add('is-dismissing');
+      localStorage.setItem('top-banner-dismissed', 'true');
+      
+      // Set fixed height to current height to allow CSS transition to 0 height
+      banner.style.maxHeight = banner.scrollHeight + 'px';
+      // Trigger reflow
+      banner.offsetHeight;
+      banner.style.maxHeight = '0';
+      banner.style.paddingTop = '0';
+      banner.style.paddingBottom = '0';
+      banner.style.opacity = '0';
+      
+      banner.addEventListener('transitionend', () => {
+        banner.style.display = 'none';
+      }, { once: true });
+    });
+
+    if (slides.length > 1) {
+      let activeIndex = 0;
+      const speed = parseInt(banner.dataset.speed || '5000', 10);
+
+      const rotateSlides = () => {
+        slides[activeIndex].classList.remove('is-active');
+        activeIndex = (activeIndex + 1) % slides.length;
+        slides[activeIndex].classList.add('is-active');
+      };
+
+      let intervalId = setInterval(rotateSlides, speed);
+
+      // Pause rotation on hover
+      banner.addEventListener('mouseenter', () => clearInterval(intervalId));
+      banner.addEventListener('mouseleave', () => {
+        intervalId = setInterval(rotateSlides, speed);
+      });
+    }
+  }
+</script>
+
+<style>
+  .top-banner {
+    position: relative;
+    z-index: 101; /* Higher than sticky header */
+    background: linear-gradient(135deg, #2a2420 0%, #3d342e 100%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    color: #fff;
+    overflow: hidden;
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.4;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), 
+                opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+                padding 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 0;
+    opacity: 0;
+  }
+
+  .top-banner.is-visible {
+    max-height: 200px; /* High enough to allow vertical expand transition */
+    opacity: 1;
+    padding: 0.65rem 0;
+  }
+
+  .top-banner.is-dismissing {
+    pointer-events: none;
+  }
+
+  .top-banner__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding-right: 0.5rem;
+  }
+
+  .top-banner__slider {
+    position: relative;
+    flex-grow: 1;
+    min-height: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-items: center;
+  }
+
+  .top-banner__slide {
+    grid-column: 1;
+    grid-row: 1;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .top-banner__slide.is-active {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    z-index: 2;
+  }
+
+  .top-banner__link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    color: #fff;
+    width: 100%;
+    text-decoration: none;
+    transition: opacity 0.2s;
+  }
+
+  .top-banner__link:hover {
+    opacity: 0.95;
+  }
+
+  .top-banner__text-wrap {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    flex-wrap: wrap;
+  }
+
+  .top-banner__badge {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: var(--color-accent);
+    color: #fff;
+    padding: 0.15rem 0.45rem;
+    border-radius: 3px;
+    line-height: 1;
+  }
+
+  .top-banner__content {
+    font-family: var(--font-sans);
+    letter-spacing: 0.01em;
+  }
+
+  .top-banner__cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-weight: 600;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: rgba(255, 255, 255, 0.85);
+    white-space: nowrap;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.4);
+    padding-bottom: 1px;
+    transition: color 0.2s, border-color 0.2s;
+  }
+
+  .top-banner__link:hover .top-banner__cta {
+    color: #fff;
+    border-color: #fff;
+  }
+
+  .top-banner__arrow {
+    transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .top-banner__link:hover .top-banner__arrow {
+    transform: translateX(3px);
+  }
+
+  .top-banner__close {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 0.35rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s, background 0.2s, transform 0.2s;
+    flex-shrink: 0;
+  }
+
+  .top-banner__close:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: rotate(90deg);
+  }
+
+  @media (max-width: 767px) {
+    .top-banner__link {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .top-banner__cta {
+      margin-left: 0;
+    }
+  }
+
+  @media (max-width: 639px) {
+    .top-banner.is-visible {
+      padding: 0.55rem 0;
+    }
+    .top-banner__container {
+      gap: 0.75rem;
+    }
+    .top-banner__link {
+      gap: 0.3rem;
+    }
+    .top-banner__slide {
+      font-size: 0.75rem;
+    }
+    .top-banner__badge {
+      font-size: 0.625rem;
+      padding: 0.1rem 0.35rem;
+    }
+    .top-banner__cta {
+      font-size: 0.6875rem;
+    }
+  }
+</style>

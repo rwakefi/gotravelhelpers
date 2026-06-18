@@ -26,9 +26,14 @@ import { site, nav } from '../data/site';
     <div>
       <h3 class="footer__heading">Explore</h3>
       <ul class="footer__links">
-        {nav.map((item) => (
-          <li><a href={item.href}>{item.label}</a></li>
-        ))}
+        {nav.map((item) => {
+          if (item.submenu) {
+            return item.submenu.map((sub) => (
+              <li><a href={sub.href}>{sub.label}</a></li>
+            ));
+          }
+          return <li><a href={item.href}>{item.label}</a></li>;
+        })}
       </ul>
     </div>
 
@@ -52,6 +57,7 @@ import { site, nav } from '../data/site';
 
   <div class="container footer__bottom">
     <p>&copy; {new Date().getFullYear()} {site.name}. All rights reserved.</p>
+    <p class="footer__fora">Powered by <a href="https://www.foratravel.com" target="_blank" rel="noopener noreferrer">Fora Travel</a></p>
   </div>
 </footer>
 
@@ -148,11 +154,33 @@ import { site, nav } from '../data/site';
   .footer__bottom {
     padding-top: 2rem;
     border-top: 1px solid rgba(255, 255, 255, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .footer__bottom {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   .footer__bottom p {
     font-size: 0.8125rem;
     color: rgba(247, 245, 242, 0.5);
     margin: 0;
+  }
+
+  .footer__fora a {
+    color: rgba(247, 245, 242, 0.65);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer__fora a:hover {
+    color: #fff;
+    text-decoration: underline;
   }
 </style>

@@ -1,17 +1,18 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-import { site, images } from '../data/site';
+import { site, images, testimonials } from '../data/site';
 ---
 
-<BaseLayout title="About" description="Meet Cyndi Glidewell, RN, MBA — founder of Travel Helpers, providing compassionate travel companion services worldwide.">
+<BaseLayout title="About" description="Meet Cyndi Glidewell, BSN, Certified Travel Advisor — founder of Travel Helpers, providing executive concierge and compassionate assisted travel companion services worldwide.">
   <PageHero
     label="About us"
-    title="Compassionate care meets world-class travel support"
-    description="Travel Helpers was founded on a simple belief: everyone should be able to travel — for medical care, family, or the trip of a lifetime."
+    title="Compassionate care meets world-class travel expertise"
+    description="Travel Helpers was founded on a simple belief: everyone should be able to travel — for medical care, business, family, or the trip of a lifetime."
     image={images.pageHero.about}
   />
 
+  <!-- Founder bio -->
   <section class="section">
     <div class="container about-grid">
       <div class="about-grid__image">
@@ -24,20 +25,102 @@ import { site, images } from '../data/site';
         />
       </div>
       <div class="about-grid__content prose">
-        <h2>{site.founder.name}, {site.founder.credentials}</h2>
+        <h2>{site.founder.name}</h2>
+        <p class="about-credentials">{site.founder.credentials}</p>
         <p>
-          {site.motto} Travel Helpers provides services ranging from extra hands during air travel to non-critical medical assistance while traveling — and we have expanded to stay with you throughout your adventure, not just to get you there.
+          {site.motto} Travel Helpers provides personalized travel services — from high-discretion executive concierge coordination for busy professionals, to compassionate companion support for seniors, families, and travelers with medical or mobility needs.
         </p>
         <p>
-          Recent trips have taken us on a Royal Caribbean cruise through the Eastern Caribbean, to Las Vegas with an 88-year-old client and his son, and on Norwegian Cruise Line through Greece. Every trip reminds us how many people need just a little help to achieve their travel dreams.
+          Cyndi brings a rare combination of clinical expertise and business acumen to the world of travel. As a Registered Nurse with a BSN and MBA, she understands what it means to truly care for another person — and she channels that into every trip she plans and every client she accompanies.
         </p>
         <p>
-          While you are on your vacation, we are working — navigating ports, excursions, cobblestone streets, and the details that make travel safe and enjoyable. Call Travel Helpers to hire your travel assistant today.
+          Recent trips have taken us on a Royal Caribbean cruise through the Eastern Caribbean, to Las Vegas with an 88-year-old client and his son, and on Norwegian Cruise Line through the Greek isles. Every journey reinforces why we do this work: travel is one of life's greatest gifts, and no one should be denied it simply because logistics feel overwhelming.
         </p>
+        <p>
+          Whether you are a corporate executive who needs a seamless, discreet itinerary or a family planning a once-in-a-lifetime trip for an aging parent, Travel Helpers is your trusted partner from planning through the final mile.
+        </p>
+        <a href="/contact" class="btn btn--primary">Start a Conversation</a>
       </div>
     </div>
   </section>
 
+  <!-- Credentials & Certifications -->
+  <section class="section section--alt">
+    <div class="container">
+      <p class="section-label">Credentials & expertise</p>
+      <h2 class="section-title">Qualified. Certified. Experienced.</h2>
+      <p class="section-intro creds-intro">
+        Top travel advisors don't just book trips — they bring a depth of knowledge, certification, and real-world experience that protects your investment and elevates your journey.
+      </p>
+      <div class="creds-grid">
+        <div class="cred-card card">
+          <div class="cred-card__icon" aria-hidden="true">🏥</div>
+          <h3>Registered Nurse, BSN</h3>
+          <p>Clinical training means Cyndi can assess and respond to medical situations on the road — a critical advantage for travelers with health needs. This isn't just a credential; it's peace of mind that no other travel service can match.</p>
+        </div>
+        <div class="cred-card card">
+          <div class="cred-card__icon" aria-hidden="true">📋</div>
+          <h3>Certified Travel Advisor (CTA)</h3>
+          <p>As a Certified Travel Advisor, Cyndi has formal training in destination knowledge, supplier relationships, and travel industry standards — giving you access to expertise, connections, and value that far exceed what you could book on your own.</p>
+        </div>
+        <div class="cred-card card">
+          <div class="cred-card__icon" aria-hidden="true">📖</div>
+          <h3>Published Author</h3>
+          <p>Cyndi authored <em>"The Red Hat Society Travel Guide"</em> — a testament to her encyclopedic knowledge of travel and her dedication to helping people explore the world with confidence and joy.</p>
+        </div>
+        <div class="cred-card card">
+          <div class="cred-card__icon" aria-hidden="true">🌐</div>
+          <h3>Powered by Fora Travel</h3>
+          <p>Affiliated with Fora Travel, a leading global advisor network, Travel Helpers has access to an elite portfolio of hotel partners, VIP perks, and industry connections — meaning exclusive benefits flow directly to you.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specialties -->
+  <section class="section">
+    <div class="container">
+      <p class="section-label">What we do best</p>
+      <h2 class="section-title">Our specialties</h2>
+      <div class="specialties-grid">
+        <div class="specialty-group">
+          <h3 class="specialty-group__title">Executive & Luxury Travel</h3>
+          <ul class="specialty-list">
+            <li>VIP Airport Lounge & Fast-Track Access</li>
+            <li>High-Discretion Business Travel</li>
+            <li>Luxury Vacation & Resort Curation</li>
+            <li>Corporate Itinerary Management</li>
+            <li>Private Ground Transportation</li>
+            <li>Bespoke Leisure & Wellness Experiences</li>
+          </ul>
+        </div>
+        <div class="specialty-group">
+          <h3 class="specialty-group__title">Assisted & Companion Travel</h3>
+          <ul class="specialty-list">
+            <li>Airport & In-Flight Companionship</li>
+            <li>Door-to-Door Journey Support</li>
+            <li>Medical Travel Coordination (RN-Led)</li>
+            <li>Senior & Family Travel Planning</li>
+            <li>Cruise Excursion Assistance</li>
+            <li>Accessibility & Mobility Research</li>
+          </ul>
+        </div>
+        <div class="specialty-group">
+          <h3 class="specialty-group__title">Destinations & Experiences</h3>
+          <ul class="specialty-list">
+            <li>Caribbean Cruises</li>
+            <li>European River & Ocean Cruises</li>
+            <li>Las Vegas & U.S. City Trips</li>
+            <li>Greek Isles & Mediterranean</li>
+            <li>International Medical Travel</li>
+            <li>Custom Multi-Day Adventures</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Approach -->
   <section class="section section--alt">
     <div class="container">
       <p class="section-label">Our approach</p>
@@ -45,27 +128,47 @@ import { site, images } from '../data/site';
       <div class="grid-3 approach-grid">
         <article class="card">
           <h3>Led by a registered nurse</h3>
-          <p>Medical expertise informs every companion plan, ensuring travelers with health needs receive informed, attentive support.</p>
+          <p>Medical experience informs every companion plan, ensuring travelers with health needs receive informed, attentive support throughout their journey.</p>
         </article>
         <article class="card">
           <h3>Tailored to you</h3>
-          <p>No two travelers are alike. We customize every detail — from airport assistance to multi-day trip companionship.</p>
+          <p>No two travelers are alike. Whether you need executive discretion or hands-on care, we customize every detail to your exact needs and comfort level.</p>
         </article>
         <article class="card">
-          <h3>On the adventure</h3>
-          <p>We stay with you at your destination — on excursions, at historic sites, and throughout your trip — so you can travel with confidence.</p>
+          <h3>With you on the adventure</h3>
+          <p>We stay with you at your destination — on excursions, at historic sites, and throughout your entire trip — so you travel with complete confidence.</p>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- Testimonials pull-quote -->
   <section class="section">
+    <div class="container">
+      <p class="section-label">Client voices</p>
+      <h2 class="section-title">Stories from the road</h2>
+      <div class="about-testimonials">
+        {testimonials.slice(0,2).map((item) => (
+          <blockquote class="about-testimonial">
+            <p>&ldquo;{item.quote}&rdquo;</p>
+            <footer>
+              <strong>{item.author}</strong>
+              <span>{item.location}</span>
+            </footer>
+          </blockquote>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section section--alt">
     <div class="container quote-block">
       <blockquote>
         <p>&ldquo;{site.motto}&rdquo;</p>
         <footer>— {site.founder.name}, {site.founder.credentials}</footer>
       </blockquote>
-      <a href="/contact" class="btn btn--primary">Start a Conversation</a>
+      <a href="/contact" class="btn btn--primary">Get a Personalized Estimate</a>
     </div>
   </section>
 </BaseLayout>
@@ -88,17 +191,172 @@ import { site, images } from '../data/site';
     aspect-ratio: 4 / 5;
     object-fit: cover;
     border-radius: var(--radius);
+    box-shadow: var(--shadow);
   }
 
   .about-grid__content h2 {
-    font-size: 2rem;
-    margin-bottom: 1.25rem;
+    font-size: 2.25rem;
+    margin-bottom: 0.25rem;
   }
 
+  .about-credentials {
+    font-size: 0.9375rem;
+    color: var(--color-accent);
+    font-weight: 500;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Credentials grid */
+  .creds-intro {
+    margin-bottom: 0;
+  }
+
+  .creds-grid {
+    display: grid;
+    gap: 1.25rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .creds-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .creds-grid {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .cred-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .cred-card__icon {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .cred-card h3 {
+    font-size: 1.125rem;
+    margin: 0;
+  }
+
+  .cred-card p {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* Specialties */
+  .specialties-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 640px) {
+    .specialties-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .specialty-group {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    padding: 1.75rem;
+  }
+
+  .specialty-group__title {
+    font-size: 1.0625rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--color-accent);
+    color: var(--color-text);
+  }
+
+  .specialty-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .specialty-list li {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .specialty-list li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-size: 0.875rem;
+  }
+
+  /* Approach */
   .approach-grid {
     margin-top: 2.5rem;
   }
 
+  /* About-page testimonials */
+  .about-testimonials {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .about-testimonials {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .about-testimonial {
+    background: var(--color-bg);
+    border-left: 4px solid var(--color-accent);
+    padding: 2rem;
+    margin: 0;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    box-shadow: var(--shadow);
+  }
+
+  .about-testimonial p {
+    font-size: 1.0625rem;
+    font-style: italic;
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .about-testimonial footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+  }
+
+  .about-testimonial footer strong {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+  }
+
+  .about-testimonial footer span {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+  }
+
+  /* Quote CTA */
   .quote-block {
     text-align: center;
     max-width: 40rem;

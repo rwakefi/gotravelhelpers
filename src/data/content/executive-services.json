@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "title": "VIP Concierge & Discretion",
+      "description": "Dedicated personal concierge support ensuring absolute privacy, seamless schedule management, and instant response to any travel needs.",
+      "image": "/images/trip-zurich.jpg",
+      "imageAlt": "Executive walking in Zurich city center"
+    },
+    {
+      "title": "Bespoke Leisure & Wellness Curation",
+      "description": "Curating premium experiences for your personal time—from private yacht charters and exclusive golf tee times to elite wellness retreats—ensuring your relaxation is as seamless as your travel.",
+      "image": "/images/trip-alps.jpg",
+      "imageAlt": "Scenic view of the Swiss Alps representing premium travel leisure"
+    },
+    {
+      "title": "Airport Lounge & Fast-Track Coordination",
+      "description": "Seamless transit through premium lounges, priority security lanes, customs fast-track, and direct liaison with private charter terminal operators.",
+      "image": "/images/airport.jpg",
+      "imageAlt": "Airport premium departure gate"
+    },
+    {
+      "title": "Itinerary Management & Adaptability",
+      "description": "On-the-fly booking updates, flight changes, lodging adjustments, and ground transport coordination so you stay focused on business or leisure.",
+      "image": "/images/planning.jpg",
+      "imageAlt": "Executive planning itinerary on digital tablet"
+    },
+    {
+      "title": "Secure Ground Liaison",
+      "description": "Close coordination with private drivers, local charter operations, and security details to guarantee safe, smooth, and timely transfers.",
+      "image": "/images/door-to-door.jpg",
+      "imageAlt": "Private ground transportation transfer"
+    }
+  ]
+}

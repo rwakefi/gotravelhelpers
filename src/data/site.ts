@@ -6,6 +6,9 @@ import stepsJson from './content/steps.json';
 import recentAdventuresJson from './content/recent-adventures.json';
 import founderNoteJson from './content/founder-note.json';
 import faqsJson from './content/faqs.json';
+import bannerJson from './content/banner.json';
+import executiveServicesJson from './content/executive-services.json';
+import testimonialsJson from './content/testimonials.json';
 
 function phoneHref(phone: string) {
   const digits = phone.replace(/\D/g, '');
@@ -21,7 +24,14 @@ export const images = imagesJson;
 
 export const nav = [
   { label: 'About', href: '/about' },
-  { label: 'Services', href: '/services' },
+  {
+    label: 'Services',
+    href: '#',
+    submenu: [
+      { label: 'Executive Travel', href: '/services/executive' },
+      { label: 'Assisted Travel', href: '/services' },
+    ],
+  },
   { label: 'How It Works', href: '/how-it-works' },
   { label: 'FAQ', href: '/faq' },
   { label: 'Contact', href: '/contact' },
@@ -37,6 +47,10 @@ export const faqs = faqsJson.items;
 export const stats = [
   { value: 'Worldwide', label: 'Companion coverage' },
   { value: 'Door-to-door', label: 'End-to-end support' },
-  { value: 'RN-led', label: 'Medical expertise' },
+  { value: 'RN-led', label: 'Medical experience' },
   { value: 'Custom', label: 'Trips tailored to you' },
 ] as const;
+
+export const banner = bannerJson;
+export const executiveServices = executiveServicesJson.items;
+export const testimonials = testimonialsJson.items;
